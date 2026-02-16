@@ -31,7 +31,8 @@
         "react-dom": "^19.0.0",
         "react-virtuoso": "^4.12.8",
         "sanitize-html": "^2.12.1",
-        "uniffi-bindgen-react-native": "git+https://github.com/jhugman/uniffi-bindgen-react-native#5c01f3f7025d069aac1dd1fd51ca72bb76fdb243"
+        "uniffi-bindgen-react-native": "git+https://github.com/jhugman/uniffi-bindgen-react-native#5c01f3f7025d069aac1dd1fd51ca72bb76fdb243",
+        "vite-plugin-mkcert": "^1.17.9"
     },
     "devDependencies": {
         "@biomejs/biome": "2.0.6",

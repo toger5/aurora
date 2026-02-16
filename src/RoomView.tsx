@@ -13,27 +13,30 @@ import { RoomHeaderView } from "./RoomHeaderView";
 import { Timeline } from "./Timeline";
 import type { RoomViewModel } from "./viewmodel/RoomViewModel";
 import type { RoomListViewModel } from "./viewmodel/RoomListViewModel";
+import { Widget } from "./Widget";
 
 interface RoomViewProps {
-    roomViewModel: RoomViewModel;
+  roomViewModel: RoomViewModel;
 }
 
 export const RoomView: React.FC<RoomViewProps> = ({ roomViewModel }) => {
-    const {
-        timelineViewModel,
-        memberListViewModel,
-        roomHeaderViewModel,
-        roomId,
-    } = useViewModel(roomViewModel);
+  const {
+    timelineViewModel,
+    memberListViewModel,
+    roomHeaderViewModel,
+    widgetViewModel,
+    roomId,
+  } = useViewModel(roomViewModel);
 
-    return (
-        <>
-            <main className="mx_MainPanel">
-                <RoomHeaderView roomHeaderViewModel={roomHeaderViewModel} />
-                <Timeline timelineViewModel={timelineViewModel} />
-                <Composer timelineViewModel={timelineViewModel} />
-            </main>
-            <MemberListView vm={memberListViewModel} />
-        </>
-    );
+  return (
+    <>
+      <main className="mx_MainPanel">
+        <RoomHeaderView roomHeaderViewModel={roomHeaderViewModel} />
+        <Timeline timelineViewModel={timelineViewModel} />
+        <Widget widgetViewModel={widgetViewModel}></Widget>
+        <Composer timelineViewModel={timelineViewModel} />
+      </main>
+      <MemberListView vm={memberListViewModel} />
+    </>
+  );
 };

@@ -12,53 +12,53 @@ import { SplashView } from "./SplashView.tsx";
 console.log("running Client.tsx");
 
 interface ClientProps {
-    onAddAccount: () => void;
+  onAddAccount: () => void;
 }
 
 export const Client: React.FC<ClientProps> = ({ onAddAccount }) => {
-    const [clientViewModel] = useClientStoreContext();
-    const { roomListViewModel, roomViewModel } = useViewModel(clientViewModel);
+  const [clientViewModel] = useClientStoreContext();
+  const { roomListViewModel, roomViewModel } = useViewModel(clientViewModel);
 
-    // Handle room changes
-    const handleRoomSelected = (roomId: string) => {
-        clientViewModel.setCurrentRoom(roomId);
-    };
+  // Handle room changes
+  const handleRoomSelected = (roomId: string) => {
+    clientViewModel.setCurrentRoom(roomId);
+  };
 
-    if (!roomListViewModel) return null;
+  if (!roomListViewModel) return null;
 
-    console.log(
-        `roomListViewModel: ${roomListViewModel}, roomViewModel: ${roomViewModel}`,
-    );
+  console.log(
+    `roomListViewModel: ${roomListViewModel}, roomViewModel: ${roomViewModel}`,
+  );
 
-    return (
-        <>
-            <header className="mx_Header"> </header>
-            <section className="mx_Client">
-                <nav className="mx_SidePanel">
-                    <SidePanelView
-                        clientStore={clientViewModel}
-                        onAddAccount={onAddAccount}
-                    />
-                </nav>
-                <nav className="mx_RoomList">
-                    <RoomListSearch />
-                    {
-                        <>
-                            <RoomListHeader />
-                            <RoomListFiltersView vm={roomListViewModel} />
-                            <RoomListView
-                                vm={roomListViewModel}
-                                onRoomSelected={handleRoomSelected}
-                            />
-                        </>
-                    }
-                </nav>
-                {roomViewModel ? (
-                    <RoomView roomViewModel={roomViewModel} />
-                ) : (
-                    <SplashView />
-                )}
-            </section>
-        </>
-    );
+  return (
+    <>
+      <header className="mx_Header"> </header>
+      <section className="mx_Client">
+        <nav className="mx_SidePanel">
+          <SidePanelView
+            clientStore={clientViewModel}
+            onAddAccount={onAddAccount}
+          />
+        </nav>
+        <nav className="mx_RoomList">
+          <RoomListSearch />
+          {
+            <>
+              <RoomListHeader />
+              <RoomListFiltersView vm={roomListViewModel} />
+              <RoomListView
+                vm={roomListViewModel}
+                onRoomSelected={handleRoomSelected}
+              />
+            </>
+          }
+        </nav>
+        {roomViewModel ? (
+          <RoomView roomViewModel={roomViewModel} />
+        ) : (
+          <SplashView />
+        )}
+      </section>
+    </>
+  );
 };

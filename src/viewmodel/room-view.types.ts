@@ -11,14 +11,16 @@ import type { RoomInterface } from "../index.web";
 import type { MemberListViewModel } from "./MemberListViewModel";
 import type { TimelineViewModel } from "./TimelineViewModel";
 import type { RoomSummary } from "./RoomSummary";
+import { WidgetViewModel } from "./WidgetViewModel";
 
 export interface RoomViewSnapshot {
-    timelineViewModel: TimelineViewModel;
-    memberListViewModel: MemberListViewModel;
-    roomHeaderViewModel?: RoomSummary;
-    roomId: string;
+  timelineViewModel: TimelineViewModel;
+  memberListViewModel: MemberListViewModel;
+  roomHeaderViewModel?: RoomSummary;
+  widgetViewModel: WidgetViewModel;
+  roomId: string;
 }
 
 export interface Props {
-    room: RoomInterface;
+  room: RoomInterface;
 }

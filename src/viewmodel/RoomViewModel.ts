@@ -12,63 +12,73 @@ import { MemberListViewModel } from "./MemberListViewModel";
 import { TimelineViewModel } from "./TimelineViewModel";
 import { buildRoomSummary, type RoomSummary } from "./RoomSummary";
 import type { Props, RoomViewSnapshot } from "./room-view.types";
+import { WidgetViewModel } from "./WidgetViewModel";
 
 export class RoomViewModel extends BaseViewModel<RoomViewSnapshot, Props> {
-    public constructor(props: Props) {
-        const roomId = props.room.id();
-        const timelineViewModel = new TimelineViewModel({ room: props.room });
-        const memberListViewModel = new MemberListViewModel({
-            room: props.room,
-        });
+  public constructor(props: Props) {
+    const roomId = props.room.id();
+    const timelineViewModel = new TimelineViewModel({ room: props.room });
+    const widgetViewModel = new WidgetViewModel({
+      room: props.room,
+      widgetId: "HardcodedwidgetId",
+      initAfterContentLoad: true,
+      rawUrl:
+        "http://localhost:3000/webapptest?widgetId=$matrix_widget_id&perParticipantE2EE=true&userId=$matrix_user_id&deviceId=$org.matrix.msc3819.matrix_device_id&baseUrl=$org.matrix.msc4039.matrix_base_url&roomId=$matrix_room_id",
+    });
+    const memberListViewModel = new MemberListViewModel({
+      room: props.room,
+    });
 
-        super(props, {
-            timelineViewModel,
-            memberListViewModel,
-            roomHeaderViewModel: undefined, // Will be set asynchronously
-            roomId,
-        });
+    super(props, {
+      timelineViewModel,
+      memberListViewModel,
+      roomHeaderViewModel: undefined, // Will be set asynchronously
+      widgetViewModel,
+      roomId,
+    });
 
-        this.disposables.track(timelineViewModel);
-        this.disposables.track(memberListViewModel);
+    this.disposables.track(timelineViewModel);
+    this.disposables.track(memberListViewModel);
 
-        // Load room summary for header and subscribe to updates
-        this.loadRoomHeader();
-        this.subscribeToRoomInfoUpdates();
-    }
+    // Load room summary for header and subscribe to updates
+    this.loadRoomHeader();
+    this.subscribeToRoomInfoUpdates();
+  }
 
-    private async loadRoomHeader(): Promise<void> {
-        const [roomInfo, latestEvent] = await Promise.all([
-            this.props.room.roomInfo(),
-            this.props.room.latestEvent(),
-        ]);
+  private async loadRoomHeader(): Promise<void> {
+    const [roomInfo, latestEvent] = await Promise.all([
+      this.props.room.roomInfo(),
+      this.props.room.latestEvent(),
+    ]);
 
-        const roomHeaderViewModel = buildRoomSummary(
+    const roomHeaderViewModel = buildRoomSummary(
+      this.props.room,
+      roomInfo,
+      latestEvent,
+    );
+
+    this.snapshot.merge({ roomHeaderViewModel });
+  }
+
+  private subscribeToRoomInfoUpdates(): void {
+    // Subscribe to room info updates to keep header reactive
+    const roomInfoObservationToken = this.props.room.subscribeToRoomInfoUpdates(
+      {
+        call: async (roomInfo) => {
+          // When room info changes, rebuild the summary
+          const latestEvent = await this.props.room.latestEvent();
+          const roomHeaderViewModel = buildRoomSummary(
             this.props.room,
             roomInfo,
             latestEvent,
-        );
+          );
+          this.snapshot.merge({ roomHeaderViewModel });
+        },
+      },
+    );
 
-        this.snapshot.merge({ roomHeaderViewModel });
-    }
-
-    private subscribeToRoomInfoUpdates(): void {
-        // Subscribe to room info updates to keep header reactive
-        const roomInfoObservationToken =
-            this.props.room.subscribeToRoomInfoUpdates({
-                call: async (roomInfo) => {
-                    // When room info changes, rebuild the summary
-                    const latestEvent = await this.props.room.latestEvent();
-                    const roomHeaderViewModel = buildRoomSummary(
-                        this.props.room,
-                        roomInfo,
-                        latestEvent,
-                    );
-                    this.snapshot.merge({ roomHeaderViewModel });
-                },
-            });
-
-        this.disposables.track(() => {
-            roomInfoObservationToken.cancel();
-        });
-    }
+    this.disposables.track(() => {
+      roomInfoObservationToken.cancel();
+    });
+  }
 }
