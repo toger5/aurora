@@ -23,9 +23,7 @@ import { WidgetViewActions, WidgetViewSnapshot } from "./widget-view.types.ts";
 interface Props {
   widgetId: string;
   initAfterContentLoad: boolean;
-  rawUrl: string;
   room: RoomInterface;
-  // onMessageForWidget: (message: string) => void;
 }
 
 export class WidgetViewModel
@@ -33,11 +31,13 @@ export class WidgetViewModel
   implements WidgetViewActions
 {
   private running = false;
-  private driver: WidgetDriverInterface;
-  private handle: WidgetDriverHandleInterface;
+  private driver: WidgetDriverInterface | undefined;
+  private handle: WidgetDriverHandleInterface | undefined;
   private room: RoomInterface;
   private iFrameListener: ((msg: string) => void) | null = null;
-  private widgetSettings: WidgetSettings;
+  private initAfterContentLoad = false;
+  private widgetUrl: string | undefined;
+  private widgetId: string | undefined;
   private capabilityProvider: WidgetCapabilitiesProvider = {
     //securite securite securite this is wrong i will spell and repeat wrong whiskey romeo oscar golf
     acquireCapabilities: (capabilities: WidgetCapabilities) => capabilities,
@@ -45,27 +45,28 @@ export class WidgetViewModel
 
   public constructor(props: Props) {
     super(props, { url: null });
-
-    this.widgetSettings = {
-      widgetId: props.widgetId,
-      initAfterContentLoad: props.initAfterContentLoad,
-      rawUrl: props.rawUrl,
-    };
-
-    const { driver, handle } = makeWidgetDriver(this.widgetSettings);
-    this.driver = driver;
-    this.handle = handle;
+    this.initAfterContentLoad = props.initAfterContentLoad;
+    this.widgetId = props.widgetId;
     this.room = props.room;
-
-    this.run();
   }
 
   async sendMsgToDriver(msg: string): Promise<void> {
-    await this.handle.send(msg);
+    if (this.handle) {
+      await this.handle.send(msg);
+    } else {
+      console.error(
+        "Widget handle not initialized could not send message: ",
+        msg,
+      );
+    }
   }
 
   setIFrameMessageForwarder(listener: ((msg: string) => void) | null) {
     this.iFrameListener = listener;
+  }
+
+  setWidgetUrl(url: string) {
+    this.widgetUrl = url;
   }
 
   private async startReceivingFromDriver() {
@@ -79,22 +80,40 @@ export class WidgetViewModel
     }
   }
 
-  private run = (): void => {
+  public run = (): void => {
     if (this.running) return;
 
-    generateWebviewUrl(this.widgetSettings, this.room, {
+    if (!this.widgetId || !this.widgetUrl) {
+      console.error("Widget id or url not set");
+      return;
+    }
+
+    const widgetSettings = {
+      widgetId: this.widgetId,
+      initAfterContentLoad: this.initAfterContentLoad!,
+      rawUrl: this.widgetUrl,
+    };
+    console.log("make driver with", widgetSettings);
+    const { driver, handle } = makeWidgetDriver(widgetSettings);
+    this.driver = driver;
+    this.handle = handle;
+
+    console.log("originalUrl", widgetSettings.rawUrl);
+    generateWebviewUrl(widgetSettings, this.room, {
       clientId: "aurora-widget-container",
       languageTag: "undefined",
       theme: undefined,
     }).then((url) => {
       // add parent raw
-
+      console.log("originalUrl", widgetSettings.rawUrl);
       try {
         const urlObj = new URL(url);
-        urlObj.searchParams.set("parentUrl", encodeURI(window.location.href));
-        void this.driver.run(this.room, this.capabilityProvider);
-        void this.startReceivingFromDriver();
+        urlObj.searchParams.set("parentUrl", encodeURI(window.location.origin));
         this.snapshot.set({ url: urlObj.toString() });
+        setTimeout(() => {
+          void driver!.run(this.room, this.capabilityProvider);
+          void this.startReceivingFromDriver();
+        }, 1000);
       } catch {}
     });
   };

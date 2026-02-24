@@ -8,6 +8,9 @@ import { RoomListView } from "./RoomListView";
 import { RoomView } from "./RoomView";
 import { SidePanelView } from "./SidePanelView.tsx";
 import { SplashView } from "./SplashView.tsx";
+import { WidgetContainer } from "./WidgetContainerApp.tsx";
+import { useCallback, useEffect, useState } from "react";
+import { ClientState } from "./viewmodel/client-view.types.ts";
 
 console.log("running Client.tsx");
 
@@ -18,10 +21,30 @@ interface ClientProps {
 export const Client: React.FC<ClientProps> = ({ onAddAccount }) => {
   const [clientViewModel] = useClientStoreContext();
   const { roomListViewModel, roomViewModel } = useViewModel(clientViewModel);
+  const [roomId, setRoomId] = useState({});
 
+  const openWidget = useCallback(async () => {
+    console.log("callView model update");
+
+    const urlRoomId = new URLSearchParams(location.search).get("roomId");
+    if (
+      urlRoomId &&
+      clientViewModel.getSnapshot().clientState === ClientState.Syncing
+    ) {
+      clientViewModel.setCurrentRoom(urlRoomId);
+      setRoomId(urlRoomId);
+    } else {
+      console.warn("No roomId for widget startup");
+    }
+  }, [clientViewModel]);
+  useEffect(() => {
+    openWidget();
+    console.log("OMG, things are doing stuff bro.");
+  }, [clientViewModel, openWidget]);
   // Handle room changes
   const handleRoomSelected = (roomId: string) => {
     clientViewModel.setCurrentRoom(roomId);
+    setRoomId(roomId);
   };
 
   if (!roomListViewModel) return null;
@@ -40,7 +63,7 @@ export const Client: React.FC<ClientProps> = ({ onAddAccount }) => {
             onAddAccount={onAddAccount}
           />
         </nav>
-        <nav className="mx_RoomList">
+        {/*<nav className="mx_RoomList">
           <RoomListSearch />
           {
             <>
@@ -52,10 +75,11 @@ export const Client: React.FC<ClientProps> = ({ onAddAccount }) => {
               />
             </>
           }
-        </nav>
-        {roomViewModel ? (
-          <RoomView roomViewModel={roomViewModel} />
+        </nav>*/}
+        {roomViewModel && roomViewModel?.getSnapshot().roomId === roomId ? (
+          <WidgetContainer roomViewModel={roomViewModel} />
         ) : (
+          // <RoomView roomViewModel={roomViewModel} />
           <SplashView />
         )}
       </section>

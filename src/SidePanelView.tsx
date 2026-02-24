@@ -16,50 +16,50 @@ import BaseAvatar from "./MemberList/BaseAvatar";
 import { UserMenu } from "./UserMenu";
 
 type SidePanelViewProps = {
-    clientStore: ClientViewModel;
-    onAddAccount: () => void;
+  clientStore: ClientViewModel;
+  onAddAccount: () => void;
 };
 
 function onSpaceClick() {
-    // TODO
+  // TODO
 }
 
 function onSettingsClick() {
-    // TODO
+  // TODO
 }
 
 export function SidePanelView({
-    clientStore,
-    onAddAccount,
+  clientStore,
+  onAddAccount,
 }: SidePanelViewProps): JSX.Element {
-    return (
-        <>
-            <div className="mx_SidePanel_avatar">
-                <UserMenu onAddAccount={onAddAccount} />
-            </div>
-            <button
+  return (
+    <>
+      <div className="mx_SidePanel_avatar">
+        <UserMenu onAddAccount={onAddAccount} />
+      </div>
+      {/*<button
                 className="mx_SidePanel_icon mx_SidePanel_icon_selected"
                 onClick={() => onSpaceClick()}
                 type="button"
             >
                 <ChatIcon fill="var(--cpd-color-icon-primary)" />
-            </button>
-            <div className="mx_SidePanel_bottom">
-                <button
-                    className="mx_SidePanel_icon"
-                    onClick={() => onSettingsClick()}
-                    type="button"
-                >
-                    <SettingsIcon fill="var(--cpd-color-icon-primary)" />
-                </button>
-                <button
-                    className="mx_SidePanel_icon"
-                    onClick={() => clientStore.logout()}
-                    type="button"
-                >
-                    <LeaveIcon fill="var(--cpd-color-icon-critical-primary)" />
-                </button>
-            </div>
-        </>
-    );
+            </button>*/}
+      <div className="mx_SidePanel_bottom">
+        {/*<button
+          className="mx_SidePanel_icon"
+          onClick={() => onSettingsClick()}
+          type="button"
+        >
+          <SettingsIcon fill="var(--cpd-color-icon-primary)" />
+        </button>*/}
+        <button
+          className="mx_SidePanel_icon"
+          onClick={() => clientStore.logout()}
+          type="button"
+        >
+          <LeaveIcon fill="var(--cpd-color-icon-critical-primary)" />
+        </button>
+      </div>
+    </>
+  );
 }

@@ -1,9 +1,10 @@
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import react from "@vitejs/plugin-react";
-import { defineConfig } from "vite";
+import { defineConfig, searchForWorkspaceRoot } from "vite";
 import topLevelAwait from "vite-plugin-top-level-await";
 import mkcert from "vite-plugin-mkcert";
+import * as fs from "node:fs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -14,7 +15,17 @@ export default defineConfig(async () => ({
   define: {
     "process.env": {},
   },
-
+  server: {
+    // fs: { allow: [searchForWorkspaceRoot(process.cwd())] },
+    https: {
+      key: fs.readFileSync(
+        "/Users/timo/Projects/element-call/backend/dev_tls_m.localhost.key",
+      ),
+      cert: fs.readFileSync(
+        "/Users/timo/Projects/element-call/backend/dev_tls_m.localhost.crt",
+      ),
+    },
+  },
   resolve: {
     alias: {
       "@element-hq/web-shared-components/src": resolve(
