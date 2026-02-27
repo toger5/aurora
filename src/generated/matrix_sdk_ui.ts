@@ -101,6 +101,42 @@ const FfiConverterTypeEventItemOrigin = (() => {
 
 
 
+export enum LatestEventValueLocalState {
+    IsSending,
+    HasBeenSent,
+    CannotBeSent
+}
+
+const FfiConverterTypeLatestEventValueLocalState = (() => {
+    const ordinalConverter = FfiConverterInt32;
+    type TypeName = LatestEventValueLocalState;
+    class FFIConverter extends AbstractFfiConverterByteArray<TypeName> {
+        read(from: RustBuffer): TypeName {
+            switch (ordinalConverter.read(from)) {
+                case 1: return LatestEventValueLocalState.IsSending;
+                case 2: return LatestEventValueLocalState.HasBeenSent;
+                case 3: return LatestEventValueLocalState.CannotBeSent;
+                default: throw new UniffiInternalError.UnexpectedEnumCase();
+            }
+        }
+        write(value: TypeName, into: RustBuffer): void {
+            switch (value) {
+                case LatestEventValueLocalState.IsSending: return ordinalConverter.write(1, into);
+                case LatestEventValueLocalState.HasBeenSent: return ordinalConverter.write(2, into);
+                case LatestEventValueLocalState.CannotBeSent: return ordinalConverter.write(3, into);
+            }
+        }
+        allocationSize(value: TypeName): number {
+            return ordinalConverter.allocationSize(0);
+        }
+    }
+    return new FFIConverter();
+})();
+
+
+
+
+
 /**
  * The type of change between the previous and current pinned events.
  */
@@ -284,6 +320,299 @@ const FfiConverterTypeSpaceRoomListPaginationState = (() => {
 
 
 
+// Enum: TimelineEventFocusThreadMode
+export enum TimelineEventFocusThreadMode_Tags {
+    ForceThread = "ForceThread",
+    Automatic = "Automatic"
+}
+/**
+ * Options for controlling the behaviour of [`TimelineFocus::Event`]
+ * for threaded events.
+ */
+export const TimelineEventFocusThreadMode = (() => {
+    
+
+    type ForceThread__interface = {
+        tag: TimelineEventFocusThreadMode_Tags.ForceThread
+    };
+
+    
+    /**
+     * Force the timeline into threaded mode. When the focused event is part of
+     * a thread, the timeline will be focused on that thread's root. Otherwise,
+     * the timeline will treat the target event itself as the thread root.
+     * Threaded events will never be hidden.
+     */
+    class ForceThread_ extends UniffiEnum implements ForceThread__interface {
+        /**
+         * @private
+         * This field is private and should not be used, use `tag` instead.
+         */
+        readonly [uniffiTypeNameSymbol] = "TimelineEventFocusThreadMode";
+        readonly tag = TimelineEventFocusThreadMode_Tags.ForceThread;
+        constructor() {
+            super("TimelineEventFocusThreadMode", "ForceThread");
+        }
+
+        static new(): ForceThread_ {
+            return new ForceThread_();
+        }
+
+        static instanceOf(obj: any): obj is ForceThread_ {
+            return obj.tag === TimelineEventFocusThreadMode_Tags.ForceThread;
+        }
+
+        
+
+    }
+    
+
+    type Automatic__interface = {
+        tag: TimelineEventFocusThreadMode_Tags.Automatic;
+        inner: Readonly<{hideThreadedEvents: boolean}>
+    };
+
+    
+    /**
+     * Automatically determine if the target event is
+     * part of a thread or not. If the event is part of a thread, the timeline
+     * will be filtered to on-thread events.
+     */
+    class Automatic_ extends UniffiEnum implements Automatic__interface {
+        /**
+         * @private
+         * This field is private and should not be used, use `tag` instead.
+         */
+        readonly [uniffiTypeNameSymbol] = "TimelineEventFocusThreadMode";
+        readonly tag = TimelineEventFocusThreadMode_Tags.Automatic;
+        readonly inner: Readonly<{hideThreadedEvents: boolean}>;
+        constructor(inner: { 
+        /**
+         * When the target event is not part of a thread, whether to
+         * hide in-thread replies from the live timeline. Has no effect
+         * when the target event is part of a thread.
+         *
+         * This should be set to true when the client can create
+         * [`TimelineFocus::Thread`]-focused timelines from the thread roots
+         * themselves and doesn't use the [`Self::ForceThread`] mode.
+         */hideThreadedEvents: boolean }) {
+            super("TimelineEventFocusThreadMode", "Automatic");
+            this.inner = Object.freeze(inner);
+        }
+
+        static new(inner: { 
+        /**
+         * When the target event is not part of a thread, whether to
+         * hide in-thread replies from the live timeline. Has no effect
+         * when the target event is part of a thread.
+         *
+         * This should be set to true when the client can create
+         * [`TimelineFocus::Thread`]-focused timelines from the thread roots
+         * themselves and doesn't use the [`Self::ForceThread`] mode.
+         */hideThreadedEvents: boolean }): Automatic_ {
+            return new Automatic_(inner);
+        }
+
+        static instanceOf(obj: any): obj is Automatic_ {
+            return obj.tag === TimelineEventFocusThreadMode_Tags.Automatic;
+        }
+
+        
+
+    }
+
+    function instanceOf(obj: any): obj is TimelineEventFocusThreadMode {
+        return obj[uniffiTypeNameSymbol] === "TimelineEventFocusThreadMode";
+    }
+
+    return Object.freeze({
+        instanceOf,
+  ForceThread: ForceThread_, 
+  Automatic: Automatic_
+    });
+
+})();
+
+
+/**
+ * Options for controlling the behaviour of [`TimelineFocus::Event`]
+ * for threaded events.
+ */
+
+export type TimelineEventFocusThreadMode = InstanceType<
+    typeof TimelineEventFocusThreadMode[keyof Omit<typeof TimelineEventFocusThreadMode, 'instanceOf'>]
+>;
+
+// FfiConverter for enum TimelineEventFocusThreadMode
+const FfiConverterTypeTimelineEventFocusThreadMode = (() => {
+    const ordinalConverter = FfiConverterInt32;
+    type TypeName = TimelineEventFocusThreadMode;
+    class FFIConverter extends AbstractFfiConverterByteArray<TypeName> {
+        read(from: RustBuffer): TypeName {
+            switch (ordinalConverter.read(from)) {
+                case 1: return new TimelineEventFocusThreadMode.ForceThread();
+                case 2: return new TimelineEventFocusThreadMode.Automatic({hideThreadedEvents: FfiConverterBool.read(from) });
+                default: throw new UniffiInternalError.UnexpectedEnumCase();
+            }
+        }
+        write(value: TypeName, into: RustBuffer): void {
+            switch (value.tag) {
+                case TimelineEventFocusThreadMode_Tags.ForceThread: {
+                    ordinalConverter.write(1, into);
+                    return;
+                }
+                case TimelineEventFocusThreadMode_Tags.Automatic: {
+                    ordinalConverter.write(2, into);
+                    const inner = value.inner;
+                    FfiConverterBool.write(inner.hideThreadedEvents, into);
+                    return;
+                }
+                default:
+                    // Throwing from here means that TimelineEventFocusThreadMode_Tags hasn't matched an ordinal.
+                    throw new UniffiInternalError.UnexpectedEnumCase();
+            }
+        }
+        allocationSize(value: TypeName): number {
+            switch (value.tag) {
+                case TimelineEventFocusThreadMode_Tags.ForceThread: {
+                    return ordinalConverter.allocationSize(1);
+                }
+                case TimelineEventFocusThreadMode_Tags.Automatic: {
+                    const inner = value.inner;
+                    let size = ordinalConverter.allocationSize(2);
+                    size += FfiConverterBool.allocationSize(inner.hideThreadedEvents);
+                    return size;
+                }
+                default: throw new UniffiInternalError.UnexpectedEnumCase();
+            }
+        }
+    }
+    return new FFIConverter();
+})();
+
+
+
+/**
+ * Extends [`ShieldStateCode`] to allow for a `SentInClear` code.
+ */
+export enum TimelineEventShieldStateCode {
+    /**
+     * Not enough information available to check the authenticity.
+     */
+    AuthenticityNotGuaranteed,
+    /**
+     * The sending device isn't yet known by the Client.
+     */
+    UnknownDevice,
+    /**
+     * The sending device hasn't been verified by the sender.
+     */
+    UnsignedDevice,
+    /**
+     * The sender hasn't been verified by the Client's user.
+     */
+    UnverifiedIdentity,
+    /**
+     * The sender was previously verified but changed their identity.
+     */
+    VerificationViolation,
+    /**
+     * The `sender` field on the event does not match the owner of the device
+     * that established the Megolm session.
+     */
+    MismatchedSender,
+    /**
+     * An unencrypted event in an encrypted room.
+     */
+    SentInClear
+}
+
+const FfiConverterTypeTimelineEventShieldStateCode = (() => {
+    const ordinalConverter = FfiConverterInt32;
+    type TypeName = TimelineEventShieldStateCode;
+    class FFIConverter extends AbstractFfiConverterByteArray<TypeName> {
+        read(from: RustBuffer): TypeName {
+            switch (ordinalConverter.read(from)) {
+                case 1: return TimelineEventShieldStateCode.AuthenticityNotGuaranteed;
+                case 2: return TimelineEventShieldStateCode.UnknownDevice;
+                case 3: return TimelineEventShieldStateCode.UnsignedDevice;
+                case 4: return TimelineEventShieldStateCode.UnverifiedIdentity;
+                case 5: return TimelineEventShieldStateCode.VerificationViolation;
+                case 6: return TimelineEventShieldStateCode.MismatchedSender;
+                case 7: return TimelineEventShieldStateCode.SentInClear;
+                default: throw new UniffiInternalError.UnexpectedEnumCase();
+            }
+        }
+        write(value: TypeName, into: RustBuffer): void {
+            switch (value) {
+                case TimelineEventShieldStateCode.AuthenticityNotGuaranteed: return ordinalConverter.write(1, into);
+                case TimelineEventShieldStateCode.UnknownDevice: return ordinalConverter.write(2, into);
+                case TimelineEventShieldStateCode.UnsignedDevice: return ordinalConverter.write(3, into);
+                case TimelineEventShieldStateCode.UnverifiedIdentity: return ordinalConverter.write(4, into);
+                case TimelineEventShieldStateCode.VerificationViolation: return ordinalConverter.write(5, into);
+                case TimelineEventShieldStateCode.MismatchedSender: return ordinalConverter.write(6, into);
+                case TimelineEventShieldStateCode.SentInClear: return ordinalConverter.write(7, into);
+            }
+        }
+        allocationSize(value: TypeName): number {
+            return ordinalConverter.allocationSize(0);
+        }
+    }
+    return new FFIConverter();
+})();
+
+
+
+
+
+/**
+ * The level of read receipt tracking for the timeline.
+ */
+export enum TimelineReadReceiptTracking {
+    /**
+     * Track read receipts for all events.
+     */
+    AllEvents,
+    /**
+     * Track read receipts only for message-like events.
+     */
+    MessageLikeEvents,
+    /**
+     * Disable read receipt tracking.
+     */
+    Disabled
+}
+
+const FfiConverterTypeTimelineReadReceiptTracking = (() => {
+    const ordinalConverter = FfiConverterInt32;
+    type TypeName = TimelineReadReceiptTracking;
+    class FFIConverter extends AbstractFfiConverterByteArray<TypeName> {
+        read(from: RustBuffer): TypeName {
+            switch (ordinalConverter.read(from)) {
+                case 1: return TimelineReadReceiptTracking.AllEvents;
+                case 2: return TimelineReadReceiptTracking.MessageLikeEvents;
+                case 3: return TimelineReadReceiptTracking.Disabled;
+                default: throw new UniffiInternalError.UnexpectedEnumCase();
+            }
+        }
+        write(value: TypeName, into: RustBuffer): void {
+            switch (value) {
+                case TimelineReadReceiptTracking.AllEvents: return ordinalConverter.write(1, into);
+                case TimelineReadReceiptTracking.MessageLikeEvents: return ordinalConverter.write(2, into);
+                case TimelineReadReceiptTracking.Disabled: return ordinalConverter.write(3, into);
+            }
+        }
+        allocationSize(value: TypeName): number {
+            return ordinalConverter.allocationSize(0);
+        }
+    }
+    return new FFIConverter();
+})();
+
+
+
+
+
 
 /**
  * This should be called before anything else.
@@ -310,7 +639,11 @@ export default Object.freeze({
   initialize: uniffiEnsureInitialized,
   converters: {
     FfiConverterTypeEventItemOrigin,
+    FfiConverterTypeLatestEventValueLocalState,
     FfiConverterTypeRoomPinnedEventsChange,
     FfiConverterTypeSpaceRoomListPaginationState,
+    FfiConverterTypeTimelineEventFocusThreadMode,
+    FfiConverterTypeTimelineEventShieldStateCode,
+    FfiConverterTypeTimelineReadReceiptTracking,
   }
 });

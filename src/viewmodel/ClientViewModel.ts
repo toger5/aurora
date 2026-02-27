@@ -285,17 +285,6 @@ export class ClientViewModel
     }
 
     try {
-      initPlatform(
-        {
-          logLevel: LogLevel.Trace,
-          traceLogPacks: [],
-          extraTargets: [],
-          writeToStdoutOrSystem: true,
-          writeToFiles: undefined,
-        },
-        true,
-      );
-
       // Call the appropriate login method based on credential type
       if (credentials.type === "password") {
         await this.client.login(

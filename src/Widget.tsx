@@ -8,17 +8,17 @@ export interface WidgetProps {
   widgetViewModel: WidgetViewModel;
 }
 
-export const Widget: React.FC<WidgetProps> = ({ widgetViewModel: widget }) => {
+export const Widget: React.FC<WidgetProps> = ({ widgetViewModel: vm }) => {
   const ref = useRef<HTMLIFrameElement>(null);
-  const viewState = useViewModel(widget);
+  const snapshot = useViewModel(vm);
 
   const targetOrigin = useMemo(() => {
     try {
-      return new URL(viewState.url).origin;
+      return new URL(snapshot.url).origin;
     } catch {
       return null;
     }
-  }, [viewState.url]);
+  }, [snapshot.url]);
 
   const iFrameMessageForwarder = useCallback(
     (msg: string) => {
@@ -56,7 +56,7 @@ export const Widget: React.FC<WidgetProps> = ({ widgetViewModel: widget }) => {
 
   // Set up event listener for messages coming from the iframe
   useEffect(() => {
-    widget.setIFrameMessageForwarder(iFrameMessageForwarder);
+    vm.setIFrameMessageForwarder(iFrameMessageForwarder);
     const handleMessage = (event: MessageEvent) => {
       if (event.origin !== targetOrigin) {
         console.error("Received message from untrusted origin:", event.origin);
@@ -64,12 +64,12 @@ export const Widget: React.FC<WidgetProps> = ({ widgetViewModel: widget }) => {
       }
 
       console.log("Message from iframe:", JSON.stringify(event.data));
-      widget.sendMsgToDriver(JSON.stringify(event.data));
+      vm.sendMsgToDriver(JSON.stringify(event.data));
     };
 
     window.addEventListener("message", handleMessage);
     return () => {
-      widget.setIFrameMessageForwarder(null);
+      vm.setIFrameMessageForwarder(null);
       window.removeEventListener("message", handleMessage);
     };
   }, [targetOrigin]);
@@ -80,7 +80,7 @@ export const Widget: React.FC<WidgetProps> = ({ widgetViewModel: widget }) => {
       allow={iframeFeatures}
       className={styles.iframe}
       ref={ref}
-      src={viewState.url ?? undefined}
+      src={snapshot.url ?? undefined}
     ></iframe>
   );
 };

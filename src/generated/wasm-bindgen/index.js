@@ -658,6 +658,15 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_get_session_verifica
 
 /**
  * @param {bigint} ptr
+ * @returns {bigint}
+ */
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_get_store_sizes(ptr) {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_client_get_store_sizes(ptr);
+    return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} ptr
  * @param {Uint8Array} url
  * @returns {bigint}
  */
@@ -717,6 +726,15 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_ignored_users(ptr) {
  */
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_is_livekit_rtc_supported(ptr) {
     const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_client_is_livekit_rtc_supported(ptr);
+    return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} ptr
+ * @returns {bigint}
+ */
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_is_login_with_qr_code_supported(ptr) {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_client_is_login_with_qr_code_supported(ptr);
     return BigInt.asUintN(64, ret);
 }
 
@@ -921,6 +939,15 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_observe_room_account
 
 /**
  * @param {bigint} ptr
+ * @returns {bigint}
+ */
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_optimize_stores(ptr) {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_client_optimize_stores(ptr);
+    return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} ptr
  * @param {bigint} listener
  * @returns {bigint}
  */
@@ -942,8 +969,17 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_remove_avatar(ptr) {
  * @param {bigint} ptr
  * @returns {bigint}
  */
-export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_reset_server_info(ptr) {
-    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_client_reset_server_info(ptr);
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_reset_supported_versions(ptr) {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_client_reset_supported_versions(ptr);
+    return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} ptr
+ * @returns {bigint}
+ */
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_reset_well_known(ptr) {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_client_reset_well_known(ptr);
     return BigInt.asUintN(64, ret);
 }
 
@@ -1201,12 +1237,10 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_sliding_sync_version
 
 /**
  * @param {bigint} ptr
- * @param {RustCallStatus} f_status_
  * @returns {bigint}
  */
-export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_space_service(ptr, f_status_) {
-    _assertClass(f_status_, RustCallStatus);
-    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_client_space_service(ptr, f_status_.__wbg_ptr);
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_space_service(ptr) {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_client_space_service(ptr);
     return BigInt.asUintN(64, ret);
 }
 
@@ -1222,6 +1256,18 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_start_sso_login(ptr,
     const ptr1 = passArray8ToWasm0(idp_id, wasm.__wbindgen_malloc);
     const len1 = WASM_VECTOR_LEN;
     const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_client_start_sso_login(ptr, ptr0, len0, ptr1, len1);
+    return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} ptr
+ * @param {bigint} listener
+ * @param {RustCallStatus} f_status_
+ * @returns {bigint}
+ */
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_subscribe_to_duplicate_key_upload_errors(ptr, listener, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_client_subscribe_to_duplicate_key_upload_errors(ptr, listener, f_status_.__wbg_ptr);
     return BigInt.asUintN(64, ret);
 }
 
@@ -1493,15 +1539,15 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_method_clientbuilder_build(ptr) {
 
 /**
  * @param {bigint} ptr
- * @param {Uint8Array} holder_name
+ * @param {Uint8Array} cross_process_lock_config
  * @param {RustCallStatus} f_status_
  * @returns {bigint}
  */
-export function ubrn_uniffi_matrix_sdk_ffi_fn_method_clientbuilder_cross_process_store_locks_holder_name(ptr, holder_name, f_status_) {
-    const ptr0 = passArray8ToWasm0(holder_name, wasm.__wbindgen_malloc);
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_clientbuilder_cross_process_lock_config(ptr, cross_process_lock_config, f_status_) {
+    const ptr0 = passArray8ToWasm0(cross_process_lock_config, wasm.__wbindgen_malloc);
     const len0 = WASM_VECTOR_LEN;
     _assertClass(f_status_, RustCallStatus);
-    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_clientbuilder_cross_process_store_locks_holder_name(ptr, ptr0, len0, f_status_.__wbg_ptr);
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_clientbuilder_cross_process_lock_config(ptr, ptr0, len0, f_status_.__wbg_ptr);
     return BigInt.asUintN(64, ret);
 }
 
@@ -1549,17 +1595,6 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_method_clientbuilder_disable_built
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_clientbuilder_disable_ssl_verification(ptr, f_status_) {
     _assertClass(f_status_, RustCallStatus);
     const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_clientbuilder_disable_ssl_verification(ptr, f_status_.__wbg_ptr);
-    return BigInt.asUintN(64, ret);
-}
-
-/**
- * @param {bigint} ptr
- * @param {RustCallStatus} f_status_
- * @returns {bigint}
- */
-export function ubrn_uniffi_matrix_sdk_ffi_fn_method_clientbuilder_enable_oidc_refresh_lock(ptr, f_status_) {
-    _assertClass(f_status_, RustCallStatus);
-    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_clientbuilder_enable_oidc_refresh_lock(ptr, f_status_.__wbg_ptr);
     return BigInt.asUintN(64, ret);
 }
 
@@ -3007,6 +3042,19 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_method_qrcodedata_server_name(ptr,
 /**
  * @param {bigint} ptr
  * @param {RustCallStatus} f_status_
+ * @returns {Uint8Array}
+ */
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_qrcodedata_to_bytes(ptr, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_qrcodedata_to_bytes(ptr, f_status_.__wbg_ptr);
+    var v1 = getArrayU8FromWasm0(ret[0], ret[1]).slice();
+    wasm.__wbindgen_free(ret[0], ret[1] * 1, 1);
+    return v1;
+}
+
+/**
+ * @param {bigint} ptr
+ * @param {RustCallStatus} f_status_
  * @returns {bigint}
  */
 export function ubrn_uniffi_matrix_sdk_ffi_fn_clone_room(ptr, f_status_) {
@@ -3464,6 +3512,18 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_method_room_leave(ptr) {
 
 /**
  * @param {bigint} ptr
+ * @param {Uint8Array} opts
+ * @returns {bigint}
+ */
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_room_list_threads(ptr, opts) {
+    const ptr0 = passArray8ToWasm0(opts, wasm.__wbindgen_malloc);
+    const len0 = WASM_VECTOR_LEN;
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_room_list_threads(ptr, ptr0, len0);
+    return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} ptr
  * @param {Uint8Array} thread_root
  * @returns {bigint}
  */
@@ -3608,15 +3668,6 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_method_room_membership(ptr, f_stat
     var v1 = getArrayU8FromWasm0(ret[0], ret[1]).slice();
     wasm.__wbindgen_free(ret[0], ret[1] * 1, 1);
     return v1;
-}
-
-/**
- * @param {bigint} ptr
- * @returns {bigint}
- */
-export function ubrn_uniffi_matrix_sdk_ffi_fn_method_room_new_latest_event(ptr) {
-    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_room_new_latest_event(ptr);
-    return BigInt.asUintN(64, ret);
 }
 
 /**
@@ -3852,6 +3903,18 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_method_room_set_name(ptr, name) {
     const ptr0 = passArray8ToWasm0(name, wasm.__wbindgen_malloc);
     const len0 = WASM_VECTOR_LEN;
     const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_room_set_name(ptr, ptr0, len0);
+    return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} ptr
+ * @param {Uint8Array} display_name
+ * @returns {bigint}
+ */
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_room_set_own_member_display_name(ptr, display_name) {
+    const ptr0 = passArray8ToWasm0(display_name, wasm.__wbindgen_malloc);
+    const len0 = WASM_VECTOR_LEN;
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_room_set_own_member_display_name(ptr, ptr0, len0);
     return BigInt.asUintN(64, ret);
 }
 
@@ -4832,6 +4895,19 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_method_roompowerlevels_can_user_tr
  * @param {RustCallStatus} f_status_
  * @returns {Uint8Array}
  */
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_roompowerlevels_events(ptr, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_roompowerlevels_events(ptr, f_status_.__wbg_ptr);
+    var v1 = getArrayU8FromWasm0(ret[0], ret[1]).slice();
+    wasm.__wbindgen_free(ret[0], ret[1] * 1, 1);
+    return v1;
+}
+
+/**
+ * @param {bigint} ptr
+ * @param {RustCallStatus} f_status_
+ * @returns {Uint8Array}
+ */
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_roompowerlevels_user_power_levels(ptr, f_status_) {
     _assertClass(f_status_, RustCallStatus);
     const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_roompowerlevels_user_power_levels(ptr, f_status_.__wbg_ptr);
@@ -5201,6 +5277,15 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceroomlist_pagination_st
 
 /**
  * @param {bigint} ptr
+ * @returns {bigint}
+ */
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceroomlist_reset(ptr) {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceroomlist_reset(ptr);
+    return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} ptr
  * @param {RustCallStatus} f_status_
  * @returns {Uint8Array}
  */
@@ -5307,6 +5392,18 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_editable_space
 
 /**
  * @param {bigint} ptr
+ * @param {Uint8Array} room_id
+ * @returns {bigint}
+ */
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_get_space_room(ptr, room_id) {
+    const ptr0 = passArray8ToWasm0(room_id, wasm.__wbindgen_malloc);
+    const len0 = WASM_VECTOR_LEN;
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_get_space_room(ptr, ptr0, len0);
+    return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} ptr
  * @param {Uint8Array} child_id
  * @returns {bigint}
  */
@@ -5314,15 +5411,6 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_joined_parents
     const ptr0 = passArray8ToWasm0(child_id, wasm.__wbindgen_malloc);
     const len0 = WASM_VECTOR_LEN;
     const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_joined_parents_of_child(ptr, ptr0, len0);
-    return BigInt.asUintN(64, ret);
-}
-
-/**
- * @param {bigint} ptr
- * @returns {bigint}
- */
-export function ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_joined_spaces(ptr) {
-    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_joined_spaces(ptr);
     return BigInt.asUintN(64, ret);
 }
 
@@ -5355,6 +5443,15 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_remove_child_f
 
 /**
  * @param {bigint} ptr
+ * @returns {bigint}
+ */
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_space_filters(ptr) {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_space_filters(ptr);
+    return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} ptr
  * @param {Uint8Array} space_id
  * @returns {bigint}
  */
@@ -5370,8 +5467,27 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_space_room_lis
  * @param {bigint} listener
  * @returns {bigint}
  */
-export function ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_subscribe_to_joined_spaces(ptr, listener) {
-    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_subscribe_to_joined_spaces(ptr, listener);
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_subscribe_to_space_filters(ptr, listener) {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_subscribe_to_space_filters(ptr, listener);
+    return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} ptr
+ * @param {bigint} listener
+ * @returns {bigint}
+ */
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_subscribe_to_top_level_joined_spaces(ptr, listener) {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_subscribe_to_top_level_joined_spaces(ptr, listener);
+    return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} ptr
+ * @returns {bigint}
+ */
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_top_level_joined_spaces(ptr) {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_top_level_joined_spaces(ptr);
     return BigInt.asUintN(64, ret);
 }
 
@@ -5627,17 +5743,6 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_method_syncservicebuilder_finish(p
  * @param {RustCallStatus} f_status_
  * @returns {bigint}
  */
-export function ubrn_uniffi_matrix_sdk_ffi_fn_method_syncservicebuilder_with_cross_process_lock(ptr, f_status_) {
-    _assertClass(f_status_, RustCallStatus);
-    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_syncservicebuilder_with_cross_process_lock(ptr, f_status_.__wbg_ptr);
-    return BigInt.asUintN(64, ret);
-}
-
-/**
- * @param {bigint} ptr
- * @param {RustCallStatus} f_status_
- * @returns {bigint}
- */
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_syncservicebuilder_with_offline_mode(ptr, f_status_) {
     _assertClass(f_status_, RustCallStatus);
     const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_syncservicebuilder_with_offline_mode(ptr, f_status_.__wbg_ptr);
@@ -5694,6 +5799,26 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_method_taskhandle_is_finished(ptr,
     _assertClass(f_status_, RustCallStatus);
     const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_taskhandle_is_finished(ptr, f_status_.__wbg_ptr);
     return ret;
+}
+
+/**
+ * @param {bigint} ptr
+ * @param {RustCallStatus} f_status_
+ * @returns {bigint}
+ */
+export function ubrn_uniffi_matrix_sdk_ffi_fn_clone_threadroots(ptr, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_clone_threadroots(ptr, f_status_.__wbg_ptr);
+    return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} ptr
+ * @param {RustCallStatus} f_status_
+ */
+export function ubrn_uniffi_matrix_sdk_ffi_fn_free_threadroots(ptr, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    wasm.ubrn_uniffi_matrix_sdk_ffi_fn_free_threadroots(ptr, f_status_.__wbg_ptr);
 }
 
 /**
@@ -6196,9 +6321,9 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_free_timelineevent(ptr, f_status_)
  * @param {RustCallStatus} f_status_
  * @returns {Uint8Array}
  */
-export function ubrn_uniffi_matrix_sdk_ffi_fn_method_timelineevent_event_id(ptr, f_status_) {
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_timelineevent_content(ptr, f_status_) {
     _assertClass(f_status_, RustCallStatus);
-    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_timelineevent_event_id(ptr, f_status_.__wbg_ptr);
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_timelineevent_content(ptr, f_status_.__wbg_ptr);
     var v1 = getArrayU8FromWasm0(ret[0], ret[1]).slice();
     wasm.__wbindgen_free(ret[0], ret[1] * 1, 1);
     return v1;
@@ -6209,9 +6334,9 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_method_timelineevent_event_id(ptr,
  * @param {RustCallStatus} f_status_
  * @returns {Uint8Array}
  */
-export function ubrn_uniffi_matrix_sdk_ffi_fn_method_timelineevent_event_type(ptr, f_status_) {
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_timelineevent_event_id(ptr, f_status_) {
     _assertClass(f_status_, RustCallStatus);
-    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_timelineevent_event_type(ptr, f_status_.__wbg_ptr);
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_method_timelineevent_event_id(ptr, f_status_.__wbg_ptr);
     var v1 = getArrayU8FromWasm0(ret[0], ret[1]).slice();
     wasm.__wbindgen_free(ret[0], ret[1] * 1, 1);
     return v1;
@@ -6259,9 +6384,9 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_method_timelineevent_timestamp(ptr
  * @param {RustCallStatus} f_status_
  * @returns {bigint}
  */
-export function ubrn_uniffi_matrix_sdk_ffi_fn_clone_timelineeventtypefilter(ptr, f_status_) {
+export function ubrn_uniffi_matrix_sdk_ffi_fn_clone_timelineeventfilter(ptr, f_status_) {
     _assertClass(f_status_, RustCallStatus);
-    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_clone_timelineeventtypefilter(ptr, f_status_.__wbg_ptr);
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_clone_timelineeventfilter(ptr, f_status_.__wbg_ptr);
     return BigInt.asUintN(64, ret);
 }
 
@@ -6269,21 +6394,21 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_clone_timelineeventtypefilter(ptr,
  * @param {bigint} ptr
  * @param {RustCallStatus} f_status_
  */
-export function ubrn_uniffi_matrix_sdk_ffi_fn_free_timelineeventtypefilter(ptr, f_status_) {
+export function ubrn_uniffi_matrix_sdk_ffi_fn_free_timelineeventfilter(ptr, f_status_) {
     _assertClass(f_status_, RustCallStatus);
-    wasm.ubrn_uniffi_matrix_sdk_ffi_fn_free_timelineeventtypefilter(ptr, f_status_.__wbg_ptr);
+    wasm.ubrn_uniffi_matrix_sdk_ffi_fn_free_timelineeventfilter(ptr, f_status_.__wbg_ptr);
 }
 
 /**
- * @param {Uint8Array} event_types
+ * @param {Uint8Array} conditions
  * @param {RustCallStatus} f_status_
  * @returns {bigint}
  */
-export function ubrn_uniffi_matrix_sdk_ffi_fn_constructor_timelineeventtypefilter_exclude(event_types, f_status_) {
-    const ptr0 = passArray8ToWasm0(event_types, wasm.__wbindgen_malloc);
+export function ubrn_uniffi_matrix_sdk_ffi_fn_constructor_timelineeventfilter_exclude(conditions, f_status_) {
+    const ptr0 = passArray8ToWasm0(conditions, wasm.__wbindgen_malloc);
     const len0 = WASM_VECTOR_LEN;
     _assertClass(f_status_, RustCallStatus);
-    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_constructor_timelineeventtypefilter_exclude(ptr0, len0, f_status_.__wbg_ptr);
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_constructor_timelineeventfilter_exclude(ptr0, len0, f_status_.__wbg_ptr);
     return BigInt.asUintN(64, ret);
 }
 
@@ -6292,11 +6417,37 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_constructor_timelineeventtypefilte
  * @param {RustCallStatus} f_status_
  * @returns {bigint}
  */
-export function ubrn_uniffi_matrix_sdk_ffi_fn_constructor_timelineeventtypefilter_include(event_types, f_status_) {
+export function ubrn_uniffi_matrix_sdk_ffi_fn_constructor_timelineeventfilter_exclude_event_types(event_types, f_status_) {
     const ptr0 = passArray8ToWasm0(event_types, wasm.__wbindgen_malloc);
     const len0 = WASM_VECTOR_LEN;
     _assertClass(f_status_, RustCallStatus);
-    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_constructor_timelineeventtypefilter_include(ptr0, len0, f_status_.__wbg_ptr);
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_constructor_timelineeventfilter_exclude_event_types(ptr0, len0, f_status_.__wbg_ptr);
+    return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {Uint8Array} conditions
+ * @param {RustCallStatus} f_status_
+ * @returns {bigint}
+ */
+export function ubrn_uniffi_matrix_sdk_ffi_fn_constructor_timelineeventfilter_include(conditions, f_status_) {
+    const ptr0 = passArray8ToWasm0(conditions, wasm.__wbindgen_malloc);
+    const len0 = WASM_VECTOR_LEN;
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_constructor_timelineeventfilter_include(ptr0, len0, f_status_.__wbg_ptr);
+    return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {Uint8Array} event_types
+ * @param {RustCallStatus} f_status_
+ * @returns {bigint}
+ */
+export function ubrn_uniffi_matrix_sdk_ffi_fn_constructor_timelineeventfilter_include_event_types(event_types, f_status_) {
+    const ptr0 = passArray8ToWasm0(event_types, wasm.__wbindgen_malloc);
+    const len0 = WASM_VECTOR_LEN;
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_fn_constructor_timelineeventfilter_include_event_types(ptr0, len0, f_status_.__wbg_ptr);
     return BigInt.asUintN(64, ret);
 }
 
@@ -6626,6 +6777,13 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_clientsession
 /**
  * @param {any} vtable
  */
+export function ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_duplicatekeyuploaderrorlistener(vtable) {
+    wasm.ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_duplicatekeyuploaderrorlistener(vtable);
+}
+
+/**
+ * @param {any} vtable
+ */
 export function ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_enablerecoveryprogresslistener(vtable) {
     wasm.ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_enablerecoveryprogresslistener(vtable);
 }
@@ -6824,6 +6982,13 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_spaceroomlist
  */
 export function ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_spaceservicejoinedspaceslistener(vtable) {
     wasm.ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_spaceservicejoinedspaceslistener(vtable);
+}
+
+/**
+ * @param {any} vtable
+ */
+export function ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_spaceservicespacefilterslistener(vtable) {
+    wasm.ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_spaceservicespacefilterslistener(vtable);
 }
 
 /**
@@ -8120,6 +8285,14 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_get_session_ve
 /**
  * @returns {number}
  */
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_get_store_sizes() {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_get_store_sizes();
+    return ret;
+}
+
+/**
+ * @returns {number}
+ */
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_get_url() {
     const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_get_url();
     return ret;
@@ -8162,6 +8335,14 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_ignored_users(
  */
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_is_livekit_rtc_supported() {
     const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_is_livekit_rtc_supported();
+    return ret;
+}
+
+/**
+ * @returns {number}
+ */
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_is_login_with_qr_code_supported() {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_is_login_with_qr_code_supported();
     return ret;
 }
 
@@ -8280,6 +8461,14 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_observe_room_a
 /**
  * @returns {number}
  */
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_optimize_stores() {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_optimize_stores();
+    return ret;
+}
+
+/**
+ * @returns {number}
+ */
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_register_notification_handler() {
     const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_register_notification_handler();
     return ret;
@@ -8296,8 +8485,16 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_remove_avatar(
 /**
  * @returns {number}
  */
-export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_reset_server_info() {
-    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_reset_server_info();
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_reset_supported_versions() {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_reset_supported_versions();
+    return ret;
+}
+
+/**
+ * @returns {number}
+ */
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_reset_well_known() {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_reset_well_known();
     return ret;
 }
 
@@ -8472,6 +8669,14 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_start_sso_logi
 /**
  * @returns {number}
  */
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_subscribe_to_duplicate_key_upload_errors() {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_subscribe_to_duplicate_key_upload_errors();
+    return ret;
+}
+
+/**
+ * @returns {number}
+ */
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_subscribe_to_ignored_users() {
     const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_subscribe_to_ignored_users();
     return ret;
@@ -8616,8 +8821,8 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_build()
 /**
  * @returns {number}
  */
-export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_cross_process_store_locks_holder_name() {
-    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_cross_process_store_locks_holder_name();
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_cross_process_lock_config() {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_cross_process_lock_config();
     return ret;
 }
 
@@ -8650,14 +8855,6 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_disable
  */
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_disable_ssl_verification() {
     const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_disable_ssl_verification();
-    return ret;
-}
-
-/**
- * @returns {number}
- */
-export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_enable_oidc_refresh_lock() {
-    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_enable_oidc_refresh_lock();
     return ret;
 }
 
@@ -9400,6 +9597,14 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_qrcodedata_server_nam
 /**
  * @returns {number}
  */
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_qrcodedata_to_bytes() {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_qrcodedata_to_bytes();
+    return ret;
+}
+
+/**
+ * @returns {number}
+ */
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_active_members_count() {
     const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_active_members_count();
     return ret;
@@ -9712,6 +9917,14 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_leave() {
 /**
  * @returns {number}
  */
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_list_threads() {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_list_threads();
+    return ret;
+}
+
+/**
+ * @returns {number}
+ */
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_load_composer_draft() {
     const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_load_composer_draft();
     return ret;
@@ -9810,14 +10023,6 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_members_no_sync(
  */
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_membership() {
     const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_membership();
-    return ret;
-}
-
-/**
- * @returns {number}
- */
-export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_new_latest_event() {
-    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_new_latest_event();
     return ret;
 }
 
@@ -9970,6 +10175,14 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_set_is_low_prior
  */
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_set_name() {
     const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_set_name();
+    return ret;
+}
+
+/**
+ * @returns {number}
+ */
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_set_own_member_display_name() {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_set_own_member_display_name();
     return ret;
 }
 
@@ -10504,6 +10717,14 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_roompowerlevels_can_u
 /**
  * @returns {number}
  */
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_roompowerlevels_events() {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_roompowerlevels_events();
+    return ret;
+}
+
+/**
+ * @returns {number}
+ */
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_roompowerlevels_user_power_levels() {
     const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_roompowerlevels_user_power_levels();
     return ret;
@@ -10696,6 +10917,14 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceroomlist_paginat
 /**
  * @returns {number}
  */
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceroomlist_reset() {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceroomlist_reset();
+    return ret;
+}
+
+/**
+ * @returns {number}
+ */
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceroomlist_rooms() {
     const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceroomlist_rooms();
     return ret;
@@ -10752,16 +10981,16 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_editable
 /**
  * @returns {number}
  */
-export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_joined_parents_of_child() {
-    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_joined_parents_of_child();
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_get_space_room() {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_get_space_room();
     return ret;
 }
 
 /**
  * @returns {number}
  */
-export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_joined_spaces() {
-    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_joined_spaces();
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_joined_parents_of_child() {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_joined_parents_of_child();
     return ret;
 }
 
@@ -10784,6 +11013,14 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_remove_c
 /**
  * @returns {number}
  */
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_space_filters() {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_space_filters();
+    return ret;
+}
+
+/**
+ * @returns {number}
+ */
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_space_room_list() {
     const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_space_room_list();
     return ret;
@@ -10792,8 +11029,24 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_space_ro
 /**
  * @returns {number}
  */
-export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_subscribe_to_joined_spaces() {
-    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_subscribe_to_joined_spaces();
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_subscribe_to_space_filters() {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_subscribe_to_space_filters();
+    return ret;
+}
+
+/**
+ * @returns {number}
+ */
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_subscribe_to_top_level_joined_spaces() {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_subscribe_to_top_level_joined_spaces();
+    return ret;
+}
+
+/**
+ * @returns {number}
+ */
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_top_level_joined_spaces() {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_top_level_joined_spaces();
     return ret;
 }
 
@@ -10882,14 +11135,6 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_syncservice_stop() {
  */
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_syncservicebuilder_finish() {
     const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_syncservicebuilder_finish();
-    return ret;
-}
-
-/**
- * @returns {number}
- */
-export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_syncservicebuilder_with_cross_process_lock() {
-    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_syncservicebuilder_with_cross_process_lock();
     return ret;
 }
 
@@ -11176,16 +11421,16 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_timeline_unpin_event(
 /**
  * @returns {number}
  */
-export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_timelineevent_event_id() {
-    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_timelineevent_event_id();
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_timelineevent_content() {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_timelineevent_content();
     return ret;
 }
 
 /**
  * @returns {number}
  */
-export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_timelineevent_event_type() {
-    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_timelineevent_event_type();
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_timelineevent_event_id() {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_timelineevent_event_id();
     return ret;
 }
 
@@ -11408,16 +11653,32 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_constructor_span_new_bridge_
 /**
  * @returns {number}
  */
-export function ubrn_uniffi_matrix_sdk_ffi_checksum_constructor_timelineeventtypefilter_exclude() {
-    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_constructor_timelineeventtypefilter_exclude();
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_constructor_timelineeventfilter_exclude() {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_constructor_timelineeventfilter_exclude();
     return ret;
 }
 
 /**
  * @returns {number}
  */
-export function ubrn_uniffi_matrix_sdk_ffi_checksum_constructor_timelineeventtypefilter_include() {
-    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_constructor_timelineeventtypefilter_include();
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_constructor_timelineeventfilter_exclude_event_types() {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_constructor_timelineeventfilter_exclude_event_types();
+    return ret;
+}
+
+/**
+ * @returns {number}
+ */
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_constructor_timelineeventfilter_include() {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_constructor_timelineeventfilter_include();
+    return ret;
+}
+
+/**
+ * @returns {number}
+ */
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_constructor_timelineeventfilter_include_event_types() {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_constructor_timelineeventfilter_include_event_types();
     return ret;
 }
 
@@ -11464,6 +11725,14 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientdelegate_did_re
 /**
  * @returns {number}
  */
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientdelegate_on_background_task_error_report() {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientdelegate_on_background_task_error_report();
+    return ret;
+}
+
+/**
+ * @returns {number}
+ */
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientsessiondelegate_retrieve_session_from_keychain() {
     const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientsessiondelegate_retrieve_session_from_keychain();
     return ret;
@@ -11474,6 +11743,14 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientsessiondelegate
  */
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientsessiondelegate_save_session_in_keychain() {
     const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientsessiondelegate_save_session_in_keychain();
+    return ret;
+}
+
+/**
+ * @returns {number}
+ */
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_duplicatekeyuploaderrorlistener_on_duplicate_key_upload_error() {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_duplicatekeyuploaderrorlistener_on_duplicate_key_upload_error();
     return ret;
 }
 
@@ -11760,6 +12037,14 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservicejoinedspa
 /**
  * @returns {number}
  */
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservicespacefilterslistener_on_update() {
+    const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservicespacefilterslistener_on_update();
+    return ret;
+}
+
+/**
+ * @returns {number}
+ */
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_syncnotificationlistener_on_notification() {
     const ret = wasm.ubrn_uniffi_matrix_sdk_ffi_checksum_method_syncnotificationlistener_on_notification();
     return ret;
@@ -11822,38 +12107,6 @@ export function ubrn_ffi_matrix_sdk_ffi_uniffi_contract_version() {
 }
 
 /**
- * @returns {number}
- */
-export function ubrn_ffi_matrix_sdk_common_uniffi_contract_version() {
-    const ret = wasm.ubrn_ffi_matrix_sdk_common_uniffi_contract_version();
-    return ret >>> 0;
-}
-
-/**
- * @returns {number}
- */
-export function ubrn_ffi_matrix_sdk_base_uniffi_contract_version() {
-    const ret = wasm.ubrn_ffi_matrix_sdk_base_uniffi_contract_version();
-    return ret >>> 0;
-}
-
-/**
- * @returns {number}
- */
-export function ubrn_ffi_matrix_sdk_ui_uniffi_contract_version() {
-    const ret = wasm.ubrn_ffi_matrix_sdk_ui_uniffi_contract_version();
-    return ret >>> 0;
-}
-
-/**
- * @returns {number}
- */
-export function ubrn_ffi_matrix_sdk_crypto_uniffi_contract_version() {
-    const ret = wasm.ubrn_ffi_matrix_sdk_crypto_uniffi_contract_version();
-    return ret >>> 0;
-}
-
-/**
  * @param {bigint} ptr
  * @param {RustCallStatus} f_status_
  * @returns {bigint}
@@ -11902,16 +12155,108 @@ export function ubrn_ffi_matrix_sdk_uniffi_contract_version() {
     return ret >>> 0;
 }
 
-function wasm_bindgen__convert__closures_____invoke__h2d054f5ec5098c8c(arg0, arg1, arg2) {
-    wasm.wasm_bindgen__convert__closures_____invoke__h2d054f5ec5098c8c(arg0, arg1, arg2);
+/**
+ * @returns {number}
+ */
+export function ubrn_ffi_matrix_sdk_base_uniffi_contract_version() {
+    const ret = wasm.ubrn_ffi_matrix_sdk_base_uniffi_contract_version();
+    return ret >>> 0;
 }
 
-function wasm_bindgen__convert__closures_____invoke__h3d3b30c8daf302f7(arg0, arg1, arg2) {
-    wasm.wasm_bindgen__convert__closures_____invoke__h3d3b30c8daf302f7(arg0, arg1, arg2);
+/**
+ * @returns {number}
+ */
+export function ubrn_ffi_matrix_sdk_common_uniffi_contract_version() {
+    const ret = wasm.ubrn_ffi_matrix_sdk_common_uniffi_contract_version();
+    return ret >>> 0;
 }
 
-function wasm_bindgen__convert__closures_____invoke__h4c87344b03f60ed2(arg0, arg1) {
-    wasm.wasm_bindgen__convert__closures_____invoke__h4c87344b03f60ed2(arg0, arg1);
+/**
+ * @returns {number}
+ */
+export function ubrn_ffi_matrix_sdk_ui_uniffi_contract_version() {
+    const ret = wasm.ubrn_ffi_matrix_sdk_ui_uniffi_contract_version();
+    return ret >>> 0;
+}
+
+/**
+ * @param {bigint} ptr
+ * @param {RustCallStatus} f_status_
+ * @returns {bigint}
+ */
+export function ubrn_uniffi_matrix_sdk_crypto_fn_clone_backupsecrets(ptr, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_matrix_sdk_crypto_fn_clone_backupsecrets(ptr, f_status_.__wbg_ptr);
+    return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} ptr
+ * @param {RustCallStatus} f_status_
+ */
+export function ubrn_uniffi_matrix_sdk_crypto_fn_free_backupsecrets(ptr, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    wasm.ubrn_uniffi_matrix_sdk_crypto_fn_free_backupsecrets(ptr, f_status_.__wbg_ptr);
+}
+
+/**
+ * @param {bigint} ptr
+ * @param {RustCallStatus} f_status_
+ * @returns {bigint}
+ */
+export function ubrn_uniffi_matrix_sdk_crypto_fn_clone_crosssigningsecrets(ptr, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_matrix_sdk_crypto_fn_clone_crosssigningsecrets(ptr, f_status_.__wbg_ptr);
+    return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} ptr
+ * @param {RustCallStatus} f_status_
+ */
+export function ubrn_uniffi_matrix_sdk_crypto_fn_free_crosssigningsecrets(ptr, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    wasm.ubrn_uniffi_matrix_sdk_crypto_fn_free_crosssigningsecrets(ptr, f_status_.__wbg_ptr);
+}
+
+/**
+ * @param {bigint} ptr
+ * @param {RustCallStatus} f_status_
+ * @returns {bigint}
+ */
+export function ubrn_uniffi_matrix_sdk_crypto_fn_clone_secretsbundle(ptr, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    const ret = wasm.ubrn_uniffi_matrix_sdk_crypto_fn_clone_secretsbundle(ptr, f_status_.__wbg_ptr);
+    return BigInt.asUintN(64, ret);
+}
+
+/**
+ * @param {bigint} ptr
+ * @param {RustCallStatus} f_status_
+ */
+export function ubrn_uniffi_matrix_sdk_crypto_fn_free_secretsbundle(ptr, f_status_) {
+    _assertClass(f_status_, RustCallStatus);
+    wasm.ubrn_uniffi_matrix_sdk_crypto_fn_free_secretsbundle(ptr, f_status_.__wbg_ptr);
+}
+
+/**
+ * @returns {number}
+ */
+export function ubrn_ffi_matrix_sdk_crypto_uniffi_contract_version() {
+    const ret = wasm.ubrn_ffi_matrix_sdk_crypto_uniffi_contract_version();
+    return ret >>> 0;
+}
+
+function wasm_bindgen__convert__closures_____invoke__haf45377fdb53aaef(arg0, arg1) {
+    wasm.wasm_bindgen__convert__closures_____invoke__haf45377fdb53aaef(arg0, arg1);
+}
+
+function wasm_bindgen__convert__closures_____invoke__h20f74f3090bd04a0(arg0, arg1, arg2) {
+    wasm.wasm_bindgen__convert__closures_____invoke__h20f74f3090bd04a0(arg0, arg1, arg2);
+}
+
+function wasm_bindgen__convert__closures_____invoke__h7ccfc24f8c57c53e(arg0, arg1) {
+    wasm.wasm_bindgen__convert__closures_____invoke__h7ccfc24f8c57c53e(arg0, arg1);
 }
 
 function takeFromExternrefTable0(idx) {
@@ -11919,24 +12264,24 @@ function takeFromExternrefTable0(idx) {
     wasm.__externref_table_dealloc(idx);
     return value;
 }
-function wasm_bindgen__convert__closures_____invoke__h3b6a4624a2b59949(arg0, arg1, arg2) {
-    const ret = wasm.wasm_bindgen__convert__closures_____invoke__h3b6a4624a2b59949(arg0, arg1, arg2);
+function wasm_bindgen__convert__closures_____invoke__h0b8ba5f847e4400f(arg0, arg1, arg2) {
+    const ret = wasm.wasm_bindgen__convert__closures_____invoke__h0b8ba5f847e4400f(arg0, arg1, arg2);
     if (ret[1]) {
         throw takeFromExternrefTable0(ret[0]);
     }
 }
 
-function wasm_bindgen__convert__closures_____invoke__hbd25f8affbe9487e(arg0, arg1) {
-    wasm.wasm_bindgen__convert__closures_____invoke__hbd25f8affbe9487e(arg0, arg1);
+function wasm_bindgen__convert__closures_____invoke__hfb55c35cdb170dfc(arg0, arg1) {
+    wasm.wasm_bindgen__convert__closures_____invoke__hfb55c35cdb170dfc(arg0, arg1);
 }
 
-function wasm_bindgen__convert__closures_____invoke__hb50df3b0b7837b50(arg0, arg1) {
-    wasm.wasm_bindgen__convert__closures_____invoke__hb50df3b0b7837b50(arg0, arg1);
+function wasm_bindgen__convert__closures_____invoke__hb4428dffc5329c40(arg0, arg1, arg2) {
+    wasm.wasm_bindgen__convert__closures_____invoke__hb4428dffc5329c40(arg0, arg1, arg2);
 }
 
 /**
  * A machine-readable representation of the authenticity for a `ShieldState`.
- * @enum {0 | 1 | 2 | 3 | 4 | 5 | 6}
+ * @enum {0 | 1 | 2 | 3 | 4 | 5}
  */
 export const ShieldStateCode = Object.freeze({
     /**
@@ -11956,19 +12301,17 @@ export const ShieldStateCode = Object.freeze({
      */
     UnverifiedIdentity: 3, "3": "UnverifiedIdentity",
     /**
-     * An unencrypted event in an encrypted room.
-     */
-    SentInClear: 4, "4": "SentInClear",
-    /**
      * The sender was previously verified but changed their identity.
      */
-    VerificationViolation: 5, "5": "VerificationViolation",
+    VerificationViolation: 4, "4": "VerificationViolation",
     /**
      * The `sender` field on the event does not match the owner of the device
      * that established the Megolm session.
      */
-    MismatchedSender: 6, "6": "MismatchedSender",
+    MismatchedSender: 5, "5": "MismatchedSender",
 });
+
+const __wbindgen_enum_IdbCursorDirection = ["next", "nextunique", "prev", "prevunique"];
 
 const __wbindgen_enum_IdbRequestReadyState = ["pending", "done"];
 
@@ -12093,11 +12436,11 @@ function __wbg_get_imports() {
         getDataViewMemory0().setInt32(arg0 + 4 * 1, len1, true);
         getDataViewMemory0().setInt32(arg0 + 4 * 0, ptr1, true);
     };
-    imports.wbg.__wbg_Window_41559019033ede94 = function(arg0) {
+    imports.wbg.__wbg_Window_bad6cc2ef3d218d1 = function(arg0) {
         const ret = arg0.Window;
         return ret;
     };
-    imports.wbg.__wbg_WorkerGlobalScope_d324bffbeaef9f3a = function(arg0) {
+    imports.wbg.__wbg_WorkerGlobalScope_ce34368dd76f04b5 = function(arg0) {
         const ret = arg0.WorkerGlobalScope;
         return ret;
     };
@@ -12191,6 +12534,10 @@ function __wbg_get_imports() {
     };
     imports.wbg.__wbg_add_09c702e72be40c03 = function() { return handleError(function (arg0, arg1, arg2) {
         const ret = arg0.add(arg1, arg2);
+        return ret;
+    }, arguments) };
+    imports.wbg.__wbg_add_7b7000e65d07997d = function() { return handleError(function (arg0, arg1) {
+        const ret = arg0.add(arg1);
         return ret;
     }, arguments) };
     imports.wbg.__wbg_append_b577eb3a177bc0fa = function() { return handleError(function (arg0, arg1, arg2, arg3, arg4) {
@@ -12294,6 +12641,12 @@ function __wbg_get_imports() {
         const ret = arg0.call(arg1, BigInt.asUintN(64, arg2));
         return ret;
     };
+    imports.wbg.__wbg_call_5ca3a4bc0315d012 = function(arg0, arg1, arg2, arg3, arg4) {
+        var v0 = getArrayU8FromWasm0(arg3, arg4).slice();
+        wasm.__wbindgen_free(arg3, arg4 * 1, 1);
+        const ret = arg0.call(arg1, BigInt.asUintN(64, arg2), v0);
+        return ret;
+    };
     imports.wbg.__wbg_call_6810e24090a06624 = function(arg0, arg1, arg2, arg3, arg4) {
         var v0 = getArrayU8FromWasm0(arg3, arg4).slice();
         wasm.__wbindgen_free(arg3, arg4 * 1, 1);
@@ -12366,6 +12719,12 @@ function __wbg_get_imports() {
         const ret = arg0.call(arg1, BigInt.asUintN(64, arg2), v0);
         return ret;
     };
+    imports.wbg.__wbg_call_c213bf3d29199f5e = function(arg0, arg1, arg2, arg3, arg4) {
+        var v0 = getArrayU8FromWasm0(arg3, arg4).slice();
+        wasm.__wbindgen_free(arg3, arg4 * 1, 1);
+        const ret = arg0.call(arg1, BigInt.asUintN(64, arg2), v0);
+        return ret;
+    };
     imports.wbg.__wbg_call_d5bd0c43286af519 = function(arg0, arg1, arg2) {
         arg0.call(arg1, BigInt.asUintN(64, arg2));
     };
@@ -12385,6 +12744,14 @@ function __wbg_get_imports() {
         var v0 = getArrayU8FromWasm0(arg3, arg4).slice();
         wasm.__wbindgen_free(arg3, arg4 * 1, 1);
         const ret = arg0.call(arg1, BigInt.asUintN(64, arg2), v0);
+        return ret;
+    };
+    imports.wbg.__wbg_call_e4ad901fc9200252 = function(arg0, arg1, arg2, arg3, arg4, arg5, arg6) {
+        var v0 = getArrayU8FromWasm0(arg3, arg4).slice();
+        wasm.__wbindgen_free(arg3, arg4 * 1, 1);
+        var v1 = getArrayU8FromWasm0(arg5, arg6).slice();
+        wasm.__wbindgen_free(arg5, arg6 * 1, 1);
+        const ret = arg0.call(arg1, BigInt.asUintN(64, arg2), v0, v1);
         return ret;
     };
     imports.wbg.__wbg_call_e57975e1d0cacf54 = function(arg0, arg1, arg2, arg3) {
@@ -12445,14 +12812,22 @@ function __wbg_get_imports() {
         const ret = arg0.code;
         return ret;
     };
-    imports.wbg.__wbg_commit_a54edce65f3858f2 = function() { return handleError(function (arg0) {
+    imports.wbg.__wbg_commit_073afc947129550a = function() { return handleError(function (arg0) {
         arg0.commit();
     }, arguments) };
     imports.wbg.__wbg_continue_a31229352363abe4 = function() { return handleError(function (arg0) {
         arg0.continue();
     }, arguments) };
+    imports.wbg.__wbg_count_19ffcff63f8bc703 = function() { return handleError(function (arg0, arg1) {
+        const ret = arg0.count(arg1);
+        return ret;
+    }, arguments) };
     imports.wbg.__wbg_count_490455f0b0267dfd = function() { return handleError(function (arg0) {
         const ret = arg0.count();
+        return ret;
+    }, arguments) };
+    imports.wbg.__wbg_count_bae74599febeb9cc = function() { return handleError(function (arg0, arg1) {
+        const ret = arg0.count(arg1);
         return ret;
     }, arguments) };
     imports.wbg.__wbg_count_cb03fc4874348eed = function() { return handleError(function (arg0) {
@@ -12465,6 +12840,10 @@ function __wbg_get_imports() {
     }, arguments) };
     imports.wbg.__wbg_createIndex_bf0bba749e8ae929 = function() { return handleError(function (arg0, arg1, arg2, arg3, arg4) {
         const ret = arg0.createIndex(getStringFromWasm0(arg1, arg2), arg3, arg4);
+        return ret;
+    }, arguments) };
+    imports.wbg.__wbg_createObjectStore_283a43a822bf49ca = function() { return handleError(function (arg0, arg1, arg2, arg3) {
+        const ret = arg0.createObjectStore(getStringFromWasm0(arg1, arg2), arg3);
         return ret;
     }, arguments) };
     imports.wbg.__wbg_createObjectStore_7df0fb1da746f44d = function() { return handleError(function (arg0, arg1, arg2) {
@@ -12587,6 +12966,10 @@ function __wbg_get_imports() {
         const ret = arg0.getAll();
         return ret;
     }, arguments) };
+    imports.wbg.__wbg_getAll_dc79a56d7676f5a2 = function() { return handleError(function (arg0, arg1) {
+        const ret = arg0.getAll(arg1);
+        return ret;
+    }, arguments) };
     imports.wbg.__wbg_getRandomValues_38a1ff1ea09f6cc7 = function() { return handleError(function (arg0, arg1) {
         globalThis.crypto.getRandomValues(getArrayU8FromWasm0(arg0, arg1));
     }, arguments) };
@@ -12621,7 +13004,7 @@ function __wbg_get_imports() {
         const ret = arg0[arg1];
         return ret;
     };
-    imports.wbg.__wbg_global_f5c2926e57ba457f = function(arg0) {
+    imports.wbg.__wbg_global_e78add1f0bdfe974 = function(arg0) {
         const ret = arg0.global;
         return ret;
     };
@@ -12637,7 +13020,7 @@ function __wbg_get_imports() {
         const ret = arg0.index(getStringFromWasm0(arg1, arg2));
         return ret;
     }, arguments) };
-    imports.wbg.__wbg_indexedDB_54f01430b1e194e8 = function() { return handleError(function (arg0) {
+    imports.wbg.__wbg_indexedDB_121c33bea2560f72 = function() { return handleError(function (arg0) {
         const ret = arg0.indexedDB;
         return isLikeNone(ret) ? 0 : addToExternrefTable0(ret);
     }, arguments) };
@@ -12659,7 +13042,7 @@ function __wbg_get_imports() {
         const ret = result;
         return ret;
     };
-    imports.wbg.__wbg_instanceof_CursorSys_4b6a8aba0e823e75 = function(arg0) {
+    imports.wbg.__wbg_instanceof_CursorSys_383984afc1fa1bbc = function(arg0) {
         let result;
         try {
             result = arg0 instanceof IDBCursorWithValue;
@@ -12875,6 +13258,10 @@ function __wbg_get_imports() {
         const ret = new Uint8Array(arg0 >>> 0);
         return ret;
     };
+    imports.wbg.__wbg_new_with_message_and_name_d7f707d91a5dd13b = function() { return handleError(function (arg0, arg1, arg2, arg3) {
+        const ret = new DOMException(getStringFromWasm0(arg0, arg1), getStringFromWasm0(arg2, arg3));
+        return ret;
+    }, arguments) };
     imports.wbg.__wbg_new_with_str_and_init_0ae7728b6ec367b1 = function() { return handleError(function (arg0, arg1, arg2) {
         const ret = new Request(getStringFromWasm0(arg0, arg1), arg2);
         return ret;
@@ -12911,8 +13298,16 @@ function __wbg_get_imports() {
         const ret = arg0.oldVersion;
         return ret;
     };
+    imports.wbg.__wbg_onBackgroundTaskErrorReport_e28cbff35536edfb = function(arg0) {
+        const ret = arg0.onBackgroundTaskErrorReport;
+        return ret;
+    };
     imports.wbg.__wbg_onChange_3da5b19725182b78 = function(arg0) {
         const ret = arg0.onChange;
+        return ret;
+    };
+    imports.wbg.__wbg_onDuplicateKeyUploadError_71a29d9aea9bd5ce = function(arg0) {
+        const ret = arg0.onDuplicateKeyUploadError;
         return ret;
     };
     imports.wbg.__wbg_onError_607fecdac020d825 = function(arg0) {
@@ -12935,12 +13330,28 @@ function __wbg_get_imports() {
         const ret = arg0.openCursor();
         return ret;
     }, arguments) };
+    imports.wbg.__wbg_openCursor_a86fb90f80dd312f = function() { return handleError(function (arg0, arg1) {
+        const ret = arg0.openCursor(arg1);
+        return ret;
+    }, arguments) };
     imports.wbg.__wbg_openCursor_b3877357f6b94bf5 = function() { return handleError(function (arg0) {
         const ret = arg0.openCursor();
         return ret;
     }, arguments) };
     imports.wbg.__wbg_openCursor_da22e71977afb7d7 = function() { return handleError(function (arg0, arg1) {
         const ret = arg0.openCursor(arg1);
+        return ret;
+    }, arguments) };
+    imports.wbg.__wbg_openKeyCursor_50a6d502ed2be192 = function() { return handleError(function (arg0, arg1, arg2) {
+        const ret = arg0.openKeyCursor(arg1, __wbindgen_enum_IdbCursorDirection[arg2]);
+        return ret;
+    }, arguments) };
+    imports.wbg.__wbg_openKeyCursor_6c95007cc4baadf2 = function() { return handleError(function (arg0, arg1) {
+        const ret = arg0.openKeyCursor(arg1);
+        return ret;
+    }, arguments) };
+    imports.wbg.__wbg_openKeyCursor_fed78672fa3d80cf = function() { return handleError(function (arg0, arg1, arg2) {
+        const ret = arg0.openKeyCursor(arg1, __wbindgen_enum_IdbCursorDirection[arg2]);
         return ret;
     }, arguments) };
     imports.wbg.__wbg_open_2653511fbee48295 = function() { return handleError(function (arg0, arg1, arg2, arg3) {
@@ -12985,6 +13396,10 @@ function __wbg_get_imports() {
         const ret = arg0.put(arg1, arg2);
         return ret;
     }, arguments) };
+    imports.wbg.__wbg_put_fe0fdaf42663469b = function() { return handleError(function (arg0, arg1) {
+        const ret = arg0.put(arg1);
+        return ret;
+    }, arguments) };
     imports.wbg.__wbg_queueMicrotask_34d692c25c47d05b = function(arg0) {
         const ret = arg0.queueMicrotask;
         return ret;
@@ -12999,11 +13414,11 @@ function __wbg_get_imports() {
         const ret = arg0.readyState;
         return (__wbindgen_enum_IdbRequestReadyState.indexOf(ret) + 1 || 3) - 1;
     };
-    imports.wbg.__wbg_request_5079471e06223120 = function(arg0) {
+    imports.wbg.__wbg_request_c533970ff464e9b2 = function(arg0) {
         const ret = arg0.request;
         return ret;
     };
-    imports.wbg.__wbg_request_fada8c23b78b3a02 = function(arg0) {
+    imports.wbg.__wbg_request_d3cccab75790c6a3 = function(arg0) {
         const ret = arg0.request;
         return ret;
     };
@@ -13052,6 +13467,9 @@ function __wbg_get_imports() {
     };
     imports.wbg.__wbg_set_headers_6926da238cd32ee4 = function(arg0, arg1) {
         arg0.headers = arg1;
+    };
+    imports.wbg.__wbg_set_key_path_ff2217f4e8c2caba = function(arg0, arg1) {
+        arg0.keyPath = arg1;
     };
     imports.wbg.__wbg_set_method_c02d8cbbe204ac2d = function(arg0, arg1, arg2) {
         arg0.method = getStringFromWasm0(arg1, arg2);
@@ -13201,19 +13619,14 @@ function __wbg_get_imports() {
         const ret = arg0.versions;
         return ret;
     };
-    imports.wbg.__wbindgen_cast_1bb5a14060148649 = function(arg0, arg1) {
-        // Cast intrinsic for `Closure(Closure { dtor_idx: 9133, function: Function { arguments: [], shim_idx: 9134, ret: Unit, inner_ret: Some(Unit) }, mutable: true }) -> Externref`.
-        const ret = makeMutClosure(arg0, arg1, wasm.wasm_bindgen__closure__destroy__h2bd330e23f35e659, wasm_bindgen__convert__closures_____invoke__hb50df3b0b7837b50);
-        return ret;
-    };
     imports.wbg.__wbindgen_cast_2241b6af4c4b2941 = function(arg0, arg1) {
         // Cast intrinsic for `Ref(String) -> Externref`.
         const ret = getStringFromWasm0(arg0, arg1);
         return ret;
     };
-    imports.wbg.__wbindgen_cast_244ba4425e84cc1c = function(arg0, arg1) {
-        // Cast intrinsic for `Closure(Closure { dtor_idx: 4589, function: Function { arguments: [NamedExternref("IDBVersionChangeEvent")], shim_idx: 4590, ret: Result(Unit), inner_ret: Some(Result(Unit)) }, mutable: true }) -> Externref`.
-        const ret = makeMutClosure(arg0, arg1, wasm.wasm_bindgen__closure__destroy__h0dd61ffb6ab9dd03, wasm_bindgen__convert__closures_____invoke__h3b6a4624a2b59949);
+    imports.wbg.__wbindgen_cast_2d9b39244513b659 = function(arg0, arg1) {
+        // Cast intrinsic for `Closure(Closure { dtor_idx: 9785, function: Function { arguments: [NamedExternref("Event")], shim_idx: 9786, ret: Unit, inner_ret: Some(Unit) }, mutable: true }) -> Externref`.
+        const ret = makeMutClosure(arg0, arg1, wasm.wasm_bindgen__closure__destroy__h76ab8c5168ab1aef, wasm_bindgen__convert__closures_____invoke__h20f74f3090bd04a0);
         return ret;
     };
     imports.wbg.__wbindgen_cast_4625c577ab2ec9ee = function(arg0) {
@@ -13221,24 +13634,24 @@ function __wbg_get_imports() {
         const ret = BigInt.asUintN(64, arg0);
         return ret;
     };
-    imports.wbg.__wbindgen_cast_54470c7686576789 = function(arg0, arg1) {
-        // Cast intrinsic for `Closure(Closure { dtor_idx: 9045, function: Function { arguments: [NamedExternref("Event")], shim_idx: 9048, ret: Unit, inner_ret: Some(Unit) }, mutable: true }) -> Externref`.
-        const ret = makeMutClosure(arg0, arg1, wasm.wasm_bindgen__closure__destroy__h1a0198950aa2e298, wasm_bindgen__convert__closures_____invoke__h2d054f5ec5098c8c);
-        return ret;
-    };
-    imports.wbg.__wbindgen_cast_768564d4ed9250d7 = function(arg0, arg1) {
-        // Cast intrinsic for `Closure(Closure { dtor_idx: 9045, function: Function { arguments: [], shim_idx: 9046, ret: Unit, inner_ret: Some(Unit) }, mutable: true }) -> Externref`.
-        const ret = makeMutClosure(arg0, arg1, wasm.wasm_bindgen__closure__destroy__h1a0198950aa2e298, wasm_bindgen__convert__closures_____invoke__hbd25f8affbe9487e);
-        return ret;
-    };
-    imports.wbg.__wbindgen_cast_985a7551ae6d7e33 = function(arg0, arg1) {
-        // Cast intrinsic for `Closure(Closure { dtor_idx: 12266, function: Function { arguments: [Externref], shim_idx: 12267, ret: Unit, inner_ret: Some(Unit) }, mutable: true }) -> Externref`.
-        const ret = makeMutClosure(arg0, arg1, wasm.wasm_bindgen__closure__destroy__h08d81abc7d1d848d, wasm_bindgen__convert__closures_____invoke__h3d3b30c8daf302f7);
+    imports.wbg.__wbindgen_cast_4c1b67b2a9fb32d6 = function(arg0, arg1) {
+        // Cast intrinsic for `Closure(Closure { dtor_idx: 4994, function: Function { arguments: [NamedExternref("IDBVersionChangeEvent")], shim_idx: 4995, ret: Result(Unit), inner_ret: Some(Result(Unit)) }, mutable: true }) -> Externref`.
+        const ret = makeMutClosure(arg0, arg1, wasm.wasm_bindgen__closure__destroy__h76ca53e4865dbbe1, wasm_bindgen__convert__closures_____invoke__h0b8ba5f847e4400f);
         return ret;
     };
     imports.wbg.__wbindgen_cast_9ae0607507abb057 = function(arg0) {
         // Cast intrinsic for `I64 -> Externref`.
         const ret = arg0;
+        return ret;
+    };
+    imports.wbg.__wbindgen_cast_a7400ea6a25f5ff2 = function(arg0, arg1) {
+        // Cast intrinsic for `Closure(Closure { dtor_idx: 13239, function: Function { arguments: [Externref], shim_idx: 13240, ret: Unit, inner_ret: Some(Unit) }, mutable: true }) -> Externref`.
+        const ret = makeMutClosure(arg0, arg1, wasm.wasm_bindgen__closure__destroy__ha0282067daadd937, wasm_bindgen__convert__closures_____invoke__hb4428dffc5329c40);
+        return ret;
+    };
+    imports.wbg.__wbindgen_cast_ad7491ecdc0bf004 = function(arg0, arg1) {
+        // Cast intrinsic for `Closure(Closure { dtor_idx: 13301, function: Function { arguments: [], shim_idx: 13302, ret: Unit, inner_ret: Some(Unit) }, mutable: true }) -> Externref`.
+        const ret = makeMutClosure(arg0, arg1, wasm.wasm_bindgen__closure__destroy__h48b8e8474f1aa479, wasm_bindgen__convert__closures_____invoke__h7ccfc24f8c57c53e);
         return ret;
     };
     imports.wbg.__wbindgen_cast_cb9088102bce6b30 = function(arg0, arg1) {
@@ -13251,9 +13664,14 @@ function __wbg_get_imports() {
         const ret = arg0;
         return ret;
     };
-    imports.wbg.__wbindgen_cast_f9049213c25a3f82 = function(arg0, arg1) {
-        // Cast intrinsic for `Closure(Closure { dtor_idx: 12328, function: Function { arguments: [], shim_idx: 12329, ret: Unit, inner_ret: Some(Unit) }, mutable: true }) -> Externref`.
-        const ret = makeMutClosure(arg0, arg1, wasm.wasm_bindgen__closure__destroy__h25db266f1b82076f, wasm_bindgen__convert__closures_____invoke__h4c87344b03f60ed2);
+    imports.wbg.__wbindgen_cast_d9d1fe964387c43a = function(arg0, arg1) {
+        // Cast intrinsic for `Closure(Closure { dtor_idx: 9880, function: Function { arguments: [], shim_idx: 9881, ret: Unit, inner_ret: Some(Unit) }, mutable: true }) -> Externref`.
+        const ret = makeMutClosure(arg0, arg1, wasm.wasm_bindgen__closure__destroy__h363773e0f0d6221c, wasm_bindgen__convert__closures_____invoke__haf45377fdb53aaef);
+        return ret;
+    };
+    imports.wbg.__wbindgen_cast_db88e9ed2cbf2f9a = function(arg0, arg1) {
+        // Cast intrinsic for `Closure(Closure { dtor_idx: 9785, function: Function { arguments: [], shim_idx: 9788, ret: Unit, inner_ret: Some(Unit) }, mutable: true }) -> Externref`.
+        const ret = makeMutClosure(arg0, arg1, wasm.wasm_bindgen__closure__destroy__h76ab8c5168ab1aef, wasm_bindgen__convert__closures_____invoke__hfb55c35cdb170dfc);
         return ret;
     };
     imports.wbg.__wbindgen_init_externref_table = function() {

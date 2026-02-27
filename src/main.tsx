@@ -3,14 +3,25 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./styles.css";
 import { Stores } from "./Stores";
-import { uniffiInitAsync } from "./index.web.ts";
+import { initPlatform, LogLevel, uniffiInitAsync } from "./index.web.ts";
 
 await uniffiInitAsync();
 
+initPlatform(
+  {
+    logLevel: LogLevel.Trace,
+    traceLogPacks: [],
+    extraTargets: [],
+    writeToStdoutOrSystem: true,
+    writeToFiles: undefined,
+  },
+  true,
+);
+
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-    <React.StrictMode>
-        <Stores>
-            <App />
-        </Stores>
-    </React.StrictMode>,
+  <React.StrictMode>
+    <Stores>
+      <App />
+    </Stores>
+  </React.StrictMode>,
 );

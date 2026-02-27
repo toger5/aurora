@@ -17,14 +17,14 @@ export default defineConfig(async () => ({
   },
   server: {
     // fs: { allow: [searchForWorkspaceRoot(process.cwd())] },
-    https: {
-      key: fs.readFileSync(
-        "/Users/timo/Projects/element-call/backend/dev_tls_m.localhost.key",
-      ),
-      cert: fs.readFileSync(
-        "/Users/timo/Projects/element-call/backend/dev_tls_m.localhost.crt",
-      ),
-    },
+    // https: {
+    //   key: fs.readFileSync(
+    //     "localhost.key",
+    //   ),
+    //   cert: fs.readFileSync(
+    //     "localhost.crt",
+    //   ),
+    // },
   },
   resolve: {
     alias: {

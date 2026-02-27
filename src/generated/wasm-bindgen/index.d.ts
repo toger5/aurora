@@ -38,12 +38,14 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_get_room(ptr: bigint
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_get_room_preview_from_room_alias(ptr: bigint, room_alias: Uint8Array): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_get_room_preview_from_room_id(ptr: bigint, room_id: Uint8Array, via_servers: Uint8Array): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_get_session_verification_controller(ptr: bigint): bigint;
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_get_store_sizes(ptr: bigint): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_get_url(ptr: bigint, url: Uint8Array): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_homeserver(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_homeserver_login_details(ptr: bigint): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_ignore_user(ptr: bigint, user_id: Uint8Array): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_ignored_users(ptr: bigint): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_is_livekit_rtc_supported(ptr: bigint): bigint;
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_is_login_with_qr_code_supported(ptr: bigint): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_is_report_room_api_supported(ptr: bigint): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_is_room_alias_available(ptr: bigint, alias: Uint8Array): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_join_room_by_id(ptr: bigint, room_id: Uint8Array): bigint;
@@ -58,9 +60,11 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_new_login_with_qr_co
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_notification_client(ptr: bigint, process_setup: Uint8Array): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_observe_account_data_event(ptr: bigint, event_type: Uint8Array, listener: bigint, f_status_: RustCallStatus): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_observe_room_account_data_event(ptr: bigint, room_id: Uint8Array, event_type: Uint8Array, listener: bigint, f_status_: RustCallStatus): bigint;
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_optimize_stores(ptr: bigint): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_register_notification_handler(ptr: bigint, listener: bigint): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_remove_avatar(ptr: bigint): bigint;
-export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_reset_server_info(ptr: bigint): bigint;
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_reset_supported_versions(ptr: bigint): bigint;
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_reset_well_known(ptr: bigint): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_resolve_room_alias(ptr: bigint, room_alias: Uint8Array): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_restore_session(ptr: bigint, session: Uint8Array): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_restore_session_with(ptr: bigint, session: Uint8Array, room_load_settings: Uint8Array): bigint;
@@ -80,8 +84,9 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_set_media_retention_
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_set_pusher(ptr: bigint, identifiers: Uint8Array, kind: Uint8Array, app_display_name: Uint8Array, device_display_name: Uint8Array, profile_tag: Uint8Array, lang: Uint8Array): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_set_utd_delegate(ptr: bigint, utd_delegate: bigint): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_sliding_sync_version(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
-export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_space_service(ptr: bigint, f_status_: RustCallStatus): bigint;
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_space_service(ptr: bigint): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_start_sso_login(ptr: bigint, redirect_url: Uint8Array, idp_id: Uint8Array): bigint;
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_subscribe_to_duplicate_key_upload_errors(ptr: bigint, listener: bigint, f_status_: RustCallStatus): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_subscribe_to_ignored_users(ptr: bigint, listener: bigint, f_status_: RustCallStatus): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_subscribe_to_media_preview_config(ptr: bigint, listener: bigint): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_client_subscribe_to_room_info(ptr: bigint, room_id: Uint8Array, listener: bigint): bigint;
@@ -103,12 +108,11 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_method_clientbuilder_auto_enable_b
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_clientbuilder_auto_enable_cross_signing(ptr: bigint, auto_enable_cross_signing: number, f_status_: RustCallStatus): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_clientbuilder_backup_download_strategy(ptr: bigint, backup_download_strategy: Uint8Array, f_status_: RustCallStatus): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_clientbuilder_build(ptr: bigint): bigint;
-export function ubrn_uniffi_matrix_sdk_ffi_fn_method_clientbuilder_cross_process_store_locks_holder_name(ptr: bigint, holder_name: Uint8Array, f_status_: RustCallStatus): bigint;
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_clientbuilder_cross_process_lock_config(ptr: bigint, cross_process_lock_config: Uint8Array, f_status_: RustCallStatus): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_clientbuilder_decryption_settings(ptr: bigint, decryption_settings: Uint8Array, f_status_: RustCallStatus): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_clientbuilder_disable_automatic_token_refresh(ptr: bigint, f_status_: RustCallStatus): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_clientbuilder_disable_built_in_root_certificates(ptr: bigint, f_status_: RustCallStatus): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_clientbuilder_disable_ssl_verification(ptr: bigint, f_status_: RustCallStatus): bigint;
-export function ubrn_uniffi_matrix_sdk_ffi_fn_method_clientbuilder_enable_oidc_refresh_lock(ptr: bigint, f_status_: RustCallStatus): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_clientbuilder_enable_share_history_on_invite(ptr: bigint, enable_share_history_on_invite: number, f_status_: RustCallStatus): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_clientbuilder_homeserver_url(ptr: bigint, url: Uint8Array, f_status_: RustCallStatus): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_clientbuilder_in_memory_store(ptr: bigint, f_status_: RustCallStatus): bigint;
@@ -235,6 +239,7 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_clone_qrcodedata(ptr: bigint, f_st
 export function ubrn_uniffi_matrix_sdk_ffi_fn_free_qrcodedata(ptr: bigint, f_status_: RustCallStatus): void;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_constructor_qrcodedata_from_bytes(bytes: Uint8Array, f_status_: RustCallStatus): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_qrcodedata_server_name(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_qrcodedata_to_bytes(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_clone_room(ptr: bigint, f_status_: RustCallStatus): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_free_room(ptr: bigint, f_status_: RustCallStatus): void;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_room_active_members_count(ptr: bigint, f_status_: RustCallStatus): bigint;
@@ -276,6 +281,7 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_method_room_kick_user(ptr: bigint,
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_room_latest_encryption_state(ptr: bigint): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_room_latest_event(ptr: bigint): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_room_leave(ptr: bigint): bigint;
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_room_list_threads(ptr: bigint, opts: Uint8Array): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_room_load_composer_draft(ptr: bigint, thread_root: Uint8Array): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_room_load_or_fetch_event(ptr: bigint, event_id: Uint8Array): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_room_mark_as_fully_read_unchecked(ptr: bigint, event_id: Uint8Array): bigint;
@@ -289,7 +295,6 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_method_room_member_with_sender_inf
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_room_members(ptr: bigint): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_room_members_no_sync(ptr: bigint): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_room_membership(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
-export function ubrn_uniffi_matrix_sdk_ffi_fn_method_room_new_latest_event(ptr: bigint): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_room_own_user_id(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_room_predecessor_room(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_room_preview_room(ptr: bigint, via: Uint8Array): bigint;
@@ -309,6 +314,7 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_method_room_send_raw(ptr: bigint, 
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_room_set_is_favourite(ptr: bigint, is_favourite: number, tag_order: Uint8Array): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_room_set_is_low_priority(ptr: bigint, is_low_priority: number, tag_order: Uint8Array): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_room_set_name(ptr: bigint, name: Uint8Array): bigint;
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_room_set_own_member_display_name(ptr: bigint, display_name: Uint8Array): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_room_set_thread_subscription(ptr: bigint, thread_root_event_id: Uint8Array, subscribed: number): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_room_set_topic(ptr: bigint, topic: Uint8Array): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_room_set_unread_flag(ptr: bigint, new_value: number): bigint;
@@ -391,6 +397,7 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_method_roompowerlevels_can_user_re
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_roompowerlevels_can_user_send_message(ptr: bigint, user_id: Uint8Array, message: Uint8Array, f_status_: RustCallStatus): number;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_roompowerlevels_can_user_send_state(ptr: bigint, user_id: Uint8Array, state_event: Uint8Array, f_status_: RustCallStatus): number;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_roompowerlevels_can_user_trigger_room_notification(ptr: bigint, user_id: Uint8Array, f_status_: RustCallStatus): number;
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_roompowerlevels_events(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_roompowerlevels_user_power_levels(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_roompowerlevels_values(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_clone_roompreview(ptr: bigint, f_status_: RustCallStatus): bigint;
@@ -427,6 +434,7 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_clone_spaceroomlist(ptr: bigint, f
 export function ubrn_uniffi_matrix_sdk_ffi_fn_free_spaceroomlist(ptr: bigint, f_status_: RustCallStatus): void;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceroomlist_paginate(ptr: bigint): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceroomlist_pagination_state(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceroomlist_reset(ptr: bigint): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceroomlist_rooms(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceroomlist_space(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceroomlist_subscribe_to_pagination_state_updates(ptr: bigint, listener: bigint, f_status_: RustCallStatus): bigint;
@@ -436,12 +444,15 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_clone_spaceservice(ptr: bigint, f_
 export function ubrn_uniffi_matrix_sdk_ffi_fn_free_spaceservice(ptr: bigint, f_status_: RustCallStatus): void;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_add_child_to_space(ptr: bigint, child_id: Uint8Array, space_id: Uint8Array): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_editable_spaces(ptr: bigint): bigint;
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_get_space_room(ptr: bigint, room_id: Uint8Array): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_joined_parents_of_child(ptr: bigint, child_id: Uint8Array): bigint;
-export function ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_joined_spaces(ptr: bigint): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_leave_space(ptr: bigint, space_id: Uint8Array): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_remove_child_from_space(ptr: bigint, child_id: Uint8Array, space_id: Uint8Array): bigint;
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_space_filters(ptr: bigint): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_space_room_list(ptr: bigint, space_id: Uint8Array): bigint;
-export function ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_subscribe_to_joined_spaces(ptr: bigint, listener: bigint): bigint;
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_subscribe_to_space_filters(ptr: bigint, listener: bigint): bigint;
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_subscribe_to_top_level_joined_spaces(ptr: bigint, listener: bigint): bigint;
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_top_level_joined_spaces(ptr: bigint): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_clone_span(ptr: bigint, f_status_: RustCallStatus): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_free_span(ptr: bigint, f_status_: RustCallStatus): void;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_constructor_span_current(f_status_: RustCallStatus): bigint;
@@ -464,13 +475,14 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_method_syncservice_stop(ptr: bigin
 export function ubrn_uniffi_matrix_sdk_ffi_fn_clone_syncservicebuilder(ptr: bigint, f_status_: RustCallStatus): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_free_syncservicebuilder(ptr: bigint, f_status_: RustCallStatus): void;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_syncservicebuilder_finish(ptr: bigint): bigint;
-export function ubrn_uniffi_matrix_sdk_ffi_fn_method_syncservicebuilder_with_cross_process_lock(ptr: bigint, f_status_: RustCallStatus): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_syncservicebuilder_with_offline_mode(ptr: bigint, f_status_: RustCallStatus): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_syncservicebuilder_with_share_pos(ptr: bigint, enable: number, f_status_: RustCallStatus): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_clone_taskhandle(ptr: bigint, f_status_: RustCallStatus): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_free_taskhandle(ptr: bigint, f_status_: RustCallStatus): void;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_taskhandle_cancel(ptr: bigint, f_status_: RustCallStatus): void;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_taskhandle_is_finished(ptr: bigint, f_status_: RustCallStatus): number;
+export function ubrn_uniffi_matrix_sdk_ffi_fn_clone_threadroots(ptr: bigint, f_status_: RustCallStatus): bigint;
+export function ubrn_uniffi_matrix_sdk_ffi_fn_free_threadroots(ptr: bigint, f_status_: RustCallStatus): void;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_clone_threadsummary(ptr: bigint, f_status_: RustCallStatus): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_free_threadsummary(ptr: bigint, f_status_: RustCallStatus): void;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_threadsummary_latest_event(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
@@ -508,15 +520,17 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_method_timeline_toggle_reaction(pt
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_timeline_unpin_event(ptr: bigint, event_id: Uint8Array): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_clone_timelineevent(ptr: bigint, f_status_: RustCallStatus): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_free_timelineevent(ptr: bigint, f_status_: RustCallStatus): void;
+export function ubrn_uniffi_matrix_sdk_ffi_fn_method_timelineevent_content(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_timelineevent_event_id(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
-export function ubrn_uniffi_matrix_sdk_ffi_fn_method_timelineevent_event_type(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_timelineevent_sender_id(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_timelineevent_thread_root_event_id(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_timelineevent_timestamp(ptr: bigint, f_status_: RustCallStatus): bigint;
-export function ubrn_uniffi_matrix_sdk_ffi_fn_clone_timelineeventtypefilter(ptr: bigint, f_status_: RustCallStatus): bigint;
-export function ubrn_uniffi_matrix_sdk_ffi_fn_free_timelineeventtypefilter(ptr: bigint, f_status_: RustCallStatus): void;
-export function ubrn_uniffi_matrix_sdk_ffi_fn_constructor_timelineeventtypefilter_exclude(event_types: Uint8Array, f_status_: RustCallStatus): bigint;
-export function ubrn_uniffi_matrix_sdk_ffi_fn_constructor_timelineeventtypefilter_include(event_types: Uint8Array, f_status_: RustCallStatus): bigint;
+export function ubrn_uniffi_matrix_sdk_ffi_fn_clone_timelineeventfilter(ptr: bigint, f_status_: RustCallStatus): bigint;
+export function ubrn_uniffi_matrix_sdk_ffi_fn_free_timelineeventfilter(ptr: bigint, f_status_: RustCallStatus): void;
+export function ubrn_uniffi_matrix_sdk_ffi_fn_constructor_timelineeventfilter_exclude(conditions: Uint8Array, f_status_: RustCallStatus): bigint;
+export function ubrn_uniffi_matrix_sdk_ffi_fn_constructor_timelineeventfilter_exclude_event_types(event_types: Uint8Array, f_status_: RustCallStatus): bigint;
+export function ubrn_uniffi_matrix_sdk_ffi_fn_constructor_timelineeventfilter_include(conditions: Uint8Array, f_status_: RustCallStatus): bigint;
+export function ubrn_uniffi_matrix_sdk_ffi_fn_constructor_timelineeventfilter_include_event_types(event_types: Uint8Array, f_status_: RustCallStatus): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_clone_timelineitem(ptr: bigint, f_status_: RustCallStatus): bigint;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_free_timelineitem(ptr: bigint, f_status_: RustCallStatus): void;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_method_timelineitem_as_event(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
@@ -549,6 +563,7 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_backupsteadys
 export function ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_calldeclinelistener(vtable: any): void;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_clientdelegate(vtable: any): void;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_clientsessiondelegate(vtable: any): void;
+export function ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_duplicatekeyuploaderrorlistener(vtable: any): void;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_enablerecoveryprogresslistener(vtable: any): void;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_generatedqrloginprogresslistener(vtable: any): void;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_grantgeneratedqrloginprogresslistener(vtable: any): void;
@@ -578,6 +593,7 @@ export function ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_spaceroomlist
 export function ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_spaceroomlistpaginationstatelistener(vtable: any): void;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_spaceroomlistspacelistener(vtable: any): void;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_spaceservicejoinedspaceslistener(vtable: any): void;
+export function ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_spaceservicespacefilterslistener(vtable: any): void;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_syncnotificationlistener(vtable: any): void;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_syncservicestateobserver(vtable: any): void;
 export function ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_timelinelistener(vtable: any): void;
@@ -717,12 +733,14 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_get_room(): nu
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_get_room_preview_from_room_alias(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_get_room_preview_from_room_id(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_get_session_verification_controller(): number;
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_get_store_sizes(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_get_url(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_homeserver(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_homeserver_login_details(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_ignore_user(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_ignored_users(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_is_livekit_rtc_supported(): number;
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_is_login_with_qr_code_supported(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_is_report_room_api_supported(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_is_room_alias_available(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_join_room_by_id(): number;
@@ -737,9 +755,11 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_new_login_with
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_notification_client(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_observe_account_data_event(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_observe_room_account_data_event(): number;
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_optimize_stores(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_register_notification_handler(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_remove_avatar(): number;
-export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_reset_server_info(): number;
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_reset_supported_versions(): number;
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_reset_well_known(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_resolve_room_alias(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_restore_session(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_restore_session_with(): number;
@@ -761,6 +781,7 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_set_utd_delega
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_sliding_sync_version(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_space_service(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_start_sso_login(): number;
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_subscribe_to_duplicate_key_upload_errors(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_subscribe_to_ignored_users(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_subscribe_to_media_preview_config(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_subscribe_to_room_info(): number;
@@ -779,12 +800,11 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_auto_en
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_auto_enable_cross_signing(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_backup_download_strategy(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_build(): number;
-export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_cross_process_store_locks_holder_name(): number;
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_cross_process_lock_config(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_decryption_settings(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_disable_automatic_token_refresh(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_disable_built_in_root_certificates(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_disable_ssl_verification(): number;
-export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_enable_oidc_refresh_lock(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_enable_share_history_on_invite(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_homeserver_url(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_in_memory_store(): number;
@@ -877,6 +897,7 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_notificationsettings_
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_notificationsettings_set_user_mention_enabled(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_notificationsettings_unmute_room(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_qrcodedata_server_name(): number;
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_qrcodedata_to_bytes(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_active_members_count(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_active_room_call_participants(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_alternative_aliases(): number;
@@ -916,6 +937,7 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_kick_user(): num
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_latest_encryption_state(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_latest_event(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_leave(): number;
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_list_threads(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_load_composer_draft(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_load_or_fetch_event(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_mark_as_fully_read_unchecked(): number;
@@ -929,7 +951,6 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_member_with_send
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_members(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_members_no_sync(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_membership(): number;
-export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_new_latest_event(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_own_user_id(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_predecessor_room(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_preview_room(): number;
@@ -949,6 +970,7 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_send_raw(): numb
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_set_is_favourite(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_set_is_low_priority(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_set_name(): number;
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_set_own_member_display_name(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_set_thread_subscription(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_set_topic(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_set_unread_flag(): number;
@@ -1015,6 +1037,7 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_roompowerlevels_can_u
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_roompowerlevels_can_user_send_message(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_roompowerlevels_can_user_send_state(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_roompowerlevels_can_user_trigger_room_notification(): number;
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_roompowerlevels_events(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_roompowerlevels_user_power_levels(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_roompowerlevels_values(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_roompreview_forget(): number;
@@ -1039,6 +1062,7 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_sessionverificationem
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_sessionverificationemoji_symbol(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceroomlist_paginate(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceroomlist_pagination_state(): number;
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceroomlist_reset(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceroomlist_rooms(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceroomlist_space(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceroomlist_subscribe_to_pagination_state_updates(): number;
@@ -1046,12 +1070,15 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceroomlist_subscri
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceroomlist_subscribe_to_space_updates(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_add_child_to_space(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_editable_spaces(): number;
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_get_space_room(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_joined_parents_of_child(): number;
-export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_joined_spaces(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_leave_space(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_remove_child_from_space(): number;
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_space_filters(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_space_room_list(): number;
-export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_subscribe_to_joined_spaces(): number;
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_subscribe_to_space_filters(): number;
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_subscribe_to_top_level_joined_spaces(): number;
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_top_level_joined_spaces(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_span_enter(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_span_exit(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_span_is_none(): number;
@@ -1063,7 +1090,6 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_syncservice_start(): 
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_syncservice_state(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_syncservice_stop(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_syncservicebuilder_finish(): number;
-export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_syncservicebuilder_with_cross_process_lock(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_syncservicebuilder_with_offline_mode(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_syncservicebuilder_with_share_pos(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_taskhandle_cancel(): number;
@@ -1099,8 +1125,8 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_timeline_send_voice_m
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_timeline_subscribe_to_back_pagination_status(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_timeline_toggle_reaction(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_timeline_unpin_event(): number;
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_timelineevent_content(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_timelineevent_event_id(): number;
-export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_timelineevent_event_type(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_timelineevent_sender_id(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_timelineevent_thread_root_event_id(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_timelineevent_timestamp(): number;
@@ -1128,15 +1154,19 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_constructor_qrcodedata_from_
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_constructor_span_current(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_constructor_span_new(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_constructor_span_new_bridge_span(): number;
-export function ubrn_uniffi_matrix_sdk_ffi_checksum_constructor_timelineeventtypefilter_exclude(): number;
-export function ubrn_uniffi_matrix_sdk_ffi_checksum_constructor_timelineeventtypefilter_include(): number;
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_constructor_timelineeventfilter_exclude(): number;
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_constructor_timelineeventfilter_exclude_event_types(): number;
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_constructor_timelineeventfilter_include(): number;
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_constructor_timelineeventfilter_include_event_types(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_accountdatalistener_on_change(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_backupstatelistener_on_update(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_backupsteadystatelistener_on_update(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_calldeclinelistener_call(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientdelegate_did_receive_auth_error(): number;
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientdelegate_on_background_task_error_report(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientsessiondelegate_retrieve_session_from_keychain(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientsessiondelegate_save_session_in_keychain(): number;
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_duplicatekeyuploaderrorlistener_on_duplicate_key_upload_error(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_enablerecoveryprogresslistener_on_update(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_generatedqrloginprogresslistener_on_update(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_grantgeneratedqrloginprogresslistener_on_update(): number;
@@ -1172,6 +1202,7 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceroomlistentriesl
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceroomlistpaginationstatelistener_on_update(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceroomlistspacelistener_on_update(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservicejoinedspaceslistener_on_update(): number;
+export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservicespacefilterslistener_on_update(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_syncnotificationlistener_on_notification(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_syncservicestateobserver_on_update(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_timelinelistener_on_update(): number;
@@ -1180,15 +1211,21 @@ export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_unabletodecryptdelega
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_verificationstatelistener_on_update(): number;
 export function ubrn_uniffi_matrix_sdk_ffi_checksum_method_widgetcapabilitiesprovider_acquire_capabilities(): number;
 export function ubrn_ffi_matrix_sdk_ffi_uniffi_contract_version(): number;
-export function ubrn_ffi_matrix_sdk_common_uniffi_contract_version(): number;
-export function ubrn_ffi_matrix_sdk_base_uniffi_contract_version(): number;
-export function ubrn_ffi_matrix_sdk_ui_uniffi_contract_version(): number;
-export function ubrn_ffi_matrix_sdk_crypto_uniffi_contract_version(): number;
 export function ubrn_uniffi_matrix_sdk_fn_clone_oauthauthorizationdata(ptr: bigint, f_status_: RustCallStatus): bigint;
 export function ubrn_uniffi_matrix_sdk_fn_free_oauthauthorizationdata(ptr: bigint, f_status_: RustCallStatus): void;
 export function ubrn_uniffi_matrix_sdk_fn_method_oauthauthorizationdata_login_url(ptr: bigint, f_status_: RustCallStatus): Uint8Array;
 export function ubrn_uniffi_matrix_sdk_checksum_method_oauthauthorizationdata_login_url(): number;
 export function ubrn_ffi_matrix_sdk_uniffi_contract_version(): number;
+export function ubrn_ffi_matrix_sdk_base_uniffi_contract_version(): number;
+export function ubrn_ffi_matrix_sdk_common_uniffi_contract_version(): number;
+export function ubrn_ffi_matrix_sdk_ui_uniffi_contract_version(): number;
+export function ubrn_uniffi_matrix_sdk_crypto_fn_clone_backupsecrets(ptr: bigint, f_status_: RustCallStatus): bigint;
+export function ubrn_uniffi_matrix_sdk_crypto_fn_free_backupsecrets(ptr: bigint, f_status_: RustCallStatus): void;
+export function ubrn_uniffi_matrix_sdk_crypto_fn_clone_crosssigningsecrets(ptr: bigint, f_status_: RustCallStatus): bigint;
+export function ubrn_uniffi_matrix_sdk_crypto_fn_free_crosssigningsecrets(ptr: bigint, f_status_: RustCallStatus): void;
+export function ubrn_uniffi_matrix_sdk_crypto_fn_clone_secretsbundle(ptr: bigint, f_status_: RustCallStatus): bigint;
+export function ubrn_uniffi_matrix_sdk_crypto_fn_free_secretsbundle(ptr: bigint, f_status_: RustCallStatus): void;
+export function ubrn_ffi_matrix_sdk_crypto_uniffi_contract_version(): number;
 /**
  * A machine-readable representation of the authenticity for a `ShieldState`.
  */
@@ -1210,18 +1247,14 @@ export enum ShieldStateCode {
    */
   UnverifiedIdentity = 3,
   /**
-   * An unencrypted event in an encrypted room.
-   */
-  SentInClear = 4,
-  /**
    * The sender was previously verified but changed their identity.
    */
-  VerificationViolation = 5,
+  VerificationViolation = 4,
   /**
    * The `sender` field on the event does not match the owner of the device
    * that established the Megolm session.
    */
-  MismatchedSender = 6,
+  MismatchedSender = 5,
 }
 export class RustCallStatus {
   free(): void;
@@ -1312,6 +1345,8 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_fn_method_client_get_room_preview_from_room_id: (a: number, b: number, c: number) => bigint;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_client_get_session_verification_controller: (a: bigint) => bigint;
   readonly uniffi_matrix_sdk_ffi_fn_method_client_get_session_verification_controller: (a: number) => bigint;
+  readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_client_get_store_sizes: (a: bigint) => bigint;
+  readonly uniffi_matrix_sdk_ffi_fn_method_client_get_store_sizes: (a: number) => bigint;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_client_get_url: (a: bigint, b: number, c: number) => bigint;
   readonly uniffi_matrix_sdk_ffi_fn_method_client_get_url: (a: number, b: number) => bigint;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_client_homeserver: (a: bigint, b: number) => [number, number];
@@ -1324,6 +1359,8 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_fn_method_client_ignored_users: (a: number) => bigint;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_client_is_livekit_rtc_supported: (a: bigint) => bigint;
   readonly uniffi_matrix_sdk_ffi_fn_method_client_is_livekit_rtc_supported: (a: number) => bigint;
+  readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_client_is_login_with_qr_code_supported: (a: bigint) => bigint;
+  readonly uniffi_matrix_sdk_ffi_fn_method_client_is_login_with_qr_code_supported: (a: number) => bigint;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_client_is_report_room_api_supported: (a: bigint) => bigint;
   readonly uniffi_matrix_sdk_ffi_fn_method_client_is_report_room_api_supported: (a: number) => bigint;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_client_is_room_alias_available: (a: bigint, b: number, c: number) => bigint;
@@ -1352,12 +1389,16 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_fn_method_client_observe_account_data_event: (a: number, b: number, c: bigint, d: number) => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_client_observe_room_account_data_event: (a: bigint, b: number, c: number, d: number, e: number, f: bigint, g: number) => bigint;
   readonly uniffi_matrix_sdk_ffi_fn_method_client_observe_room_account_data_event: (a: number, b: number, c: number, d: bigint, e: number) => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_client_optimize_stores: (a: bigint) => bigint;
+  readonly uniffi_matrix_sdk_ffi_fn_method_client_optimize_stores: (a: number) => bigint;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_client_register_notification_handler: (a: bigint, b: bigint) => bigint;
   readonly uniffi_matrix_sdk_ffi_fn_method_client_register_notification_handler: (a: number, b: bigint) => bigint;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_client_remove_avatar: (a: bigint) => bigint;
   readonly uniffi_matrix_sdk_ffi_fn_method_client_remove_avatar: (a: number) => bigint;
-  readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_client_reset_server_info: (a: bigint) => bigint;
-  readonly uniffi_matrix_sdk_ffi_fn_method_client_reset_server_info: (a: number) => bigint;
+  readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_client_reset_supported_versions: (a: bigint) => bigint;
+  readonly uniffi_matrix_sdk_ffi_fn_method_client_reset_supported_versions: (a: number) => bigint;
+  readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_client_reset_well_known: (a: bigint) => bigint;
+  readonly uniffi_matrix_sdk_ffi_fn_method_client_reset_well_known: (a: number) => bigint;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_client_resolve_room_alias: (a: bigint, b: number, c: number) => bigint;
   readonly uniffi_matrix_sdk_ffi_fn_method_client_resolve_room_alias: (a: number, b: number) => bigint;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_client_restore_session: (a: bigint, b: number, c: number) => bigint;
@@ -1396,10 +1437,12 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_fn_method_client_set_utd_delegate: (a: number, b: bigint) => bigint;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_client_sliding_sync_version: (a: bigint, b: number) => [number, number];
   readonly uniffi_matrix_sdk_ffi_fn_method_client_sliding_sync_version: (a: number, b: number, c: number) => void;
-  readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_client_space_service: (a: bigint, b: number) => bigint;
-  readonly uniffi_matrix_sdk_ffi_fn_method_client_space_service: (a: number, b: number) => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_client_space_service: (a: bigint) => bigint;
+  readonly uniffi_matrix_sdk_ffi_fn_method_client_space_service: (a: number) => bigint;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_client_start_sso_login: (a: bigint, b: number, c: number, d: number, e: number) => bigint;
   readonly uniffi_matrix_sdk_ffi_fn_method_client_start_sso_login: (a: number, b: number, c: number) => bigint;
+  readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_client_subscribe_to_duplicate_key_upload_errors: (a: bigint, b: bigint, c: number) => bigint;
+  readonly uniffi_matrix_sdk_ffi_fn_method_client_subscribe_to_duplicate_key_upload_errors: (a: number, b: bigint, c: number) => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_client_subscribe_to_ignored_users: (a: bigint, b: bigint, c: number) => bigint;
   readonly uniffi_matrix_sdk_ffi_fn_method_client_subscribe_to_ignored_users: (a: number, b: bigint, c: number) => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_client_subscribe_to_media_preview_config: (a: bigint, b: bigint) => bigint;
@@ -1442,8 +1485,8 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_fn_method_clientbuilder_backup_download_strategy: (a: number, b: number, c: number) => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_clientbuilder_build: (a: bigint) => bigint;
   readonly uniffi_matrix_sdk_ffi_fn_method_clientbuilder_build: (a: number) => bigint;
-  readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_clientbuilder_cross_process_store_locks_holder_name: (a: bigint, b: number, c: number, d: number) => bigint;
-  readonly uniffi_matrix_sdk_ffi_fn_method_clientbuilder_cross_process_store_locks_holder_name: (a: number, b: number, c: number) => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_clientbuilder_cross_process_lock_config: (a: bigint, b: number, c: number, d: number) => bigint;
+  readonly uniffi_matrix_sdk_ffi_fn_method_clientbuilder_cross_process_lock_config: (a: number, b: number, c: number) => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_clientbuilder_decryption_settings: (a: bigint, b: number, c: number, d: number) => bigint;
   readonly uniffi_matrix_sdk_ffi_fn_method_clientbuilder_decryption_settings: (a: number, b: number, c: number) => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_clientbuilder_disable_automatic_token_refresh: (a: bigint, b: number) => bigint;
@@ -1452,8 +1495,6 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_fn_method_clientbuilder_disable_built_in_root_certificates: (a: number, b: number) => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_clientbuilder_disable_ssl_verification: (a: bigint, b: number) => bigint;
   readonly uniffi_matrix_sdk_ffi_fn_method_clientbuilder_disable_ssl_verification: (a: number, b: number) => number;
-  readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_clientbuilder_enable_oidc_refresh_lock: (a: bigint, b: number) => bigint;
-  readonly uniffi_matrix_sdk_ffi_fn_method_clientbuilder_enable_oidc_refresh_lock: (a: number, b: number) => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_clientbuilder_enable_share_history_on_invite: (a: bigint, b: number, c: number) => bigint;
   readonly uniffi_matrix_sdk_ffi_fn_method_clientbuilder_enable_share_history_on_invite: (a: number, b: number, c: number) => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_clientbuilder_homeserver_url: (a: bigint, b: number, c: number, d: number) => bigint;
@@ -1706,6 +1747,8 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_fn_constructor_qrcodedata_from_bytes: (a: number, b: number) => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_qrcodedata_server_name: (a: bigint, b: number) => [number, number];
   readonly uniffi_matrix_sdk_ffi_fn_method_qrcodedata_server_name: (a: number, b: number, c: number) => void;
+  readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_qrcodedata_to_bytes: (a: bigint, b: number) => [number, number];
+  readonly uniffi_matrix_sdk_ffi_fn_method_qrcodedata_to_bytes: (a: number, b: number, c: number) => void;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_clone_room: (a: bigint, b: number) => bigint;
   readonly uniffi_matrix_sdk_ffi_fn_clone_room: (a: number, b: number) => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_free_room: (a: bigint, b: number) => void;
@@ -1788,6 +1831,8 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_fn_method_room_latest_event: (a: number) => bigint;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_room_leave: (a: bigint) => bigint;
   readonly uniffi_matrix_sdk_ffi_fn_method_room_leave: (a: number) => bigint;
+  readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_room_list_threads: (a: bigint, b: number, c: number) => bigint;
+  readonly uniffi_matrix_sdk_ffi_fn_method_room_list_threads: (a: number, b: number) => bigint;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_room_load_composer_draft: (a: bigint, b: number, c: number) => bigint;
   readonly uniffi_matrix_sdk_ffi_fn_method_room_load_composer_draft: (a: number, b: number) => bigint;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_room_load_or_fetch_event: (a: bigint, b: number, c: number) => bigint;
@@ -1814,8 +1859,6 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_fn_method_room_members_no_sync: (a: number) => bigint;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_room_membership: (a: bigint, b: number) => [number, number];
   readonly uniffi_matrix_sdk_ffi_fn_method_room_membership: (a: number, b: number, c: number) => void;
-  readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_room_new_latest_event: (a: bigint) => bigint;
-  readonly uniffi_matrix_sdk_ffi_fn_method_room_new_latest_event: (a: number) => bigint;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_room_own_user_id: (a: bigint, b: number) => [number, number];
   readonly uniffi_matrix_sdk_ffi_fn_method_room_own_user_id: (a: number, b: number, c: number) => void;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_room_predecessor_room: (a: bigint, b: number) => [number, number];
@@ -1854,6 +1897,8 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_fn_method_room_set_is_low_priority: (a: number, b: number, c: number) => bigint;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_room_set_name: (a: bigint, b: number, c: number) => bigint;
   readonly uniffi_matrix_sdk_ffi_fn_method_room_set_name: (a: number, b: number) => bigint;
+  readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_room_set_own_member_display_name: (a: bigint, b: number, c: number) => bigint;
+  readonly uniffi_matrix_sdk_ffi_fn_method_room_set_own_member_display_name: (a: number, b: number) => bigint;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_room_set_thread_subscription: (a: bigint, b: number, c: number, d: number) => bigint;
   readonly uniffi_matrix_sdk_ffi_fn_method_room_set_thread_subscription: (a: number, b: number, c: number) => bigint;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_room_set_topic: (a: bigint, b: number, c: number) => bigint;
@@ -2018,6 +2063,8 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_fn_method_roompowerlevels_can_user_send_state: (a: number, b: number, c: number, d: number) => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_roompowerlevels_can_user_trigger_room_notification: (a: bigint, b: number, c: number, d: number) => number;
   readonly uniffi_matrix_sdk_ffi_fn_method_roompowerlevels_can_user_trigger_room_notification: (a: number, b: number, c: number) => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_roompowerlevels_events: (a: bigint, b: number) => [number, number];
+  readonly uniffi_matrix_sdk_ffi_fn_method_roompowerlevels_events: (a: number, b: number, c: number) => void;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_roompowerlevels_user_power_levels: (a: bigint, b: number) => [number, number];
   readonly uniffi_matrix_sdk_ffi_fn_method_roompowerlevels_user_power_levels: (a: number, b: number, c: number) => void;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_roompowerlevels_values: (a: bigint, b: number) => [number, number];
@@ -2090,6 +2137,8 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_fn_method_spaceroomlist_paginate: (a: number) => bigint;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceroomlist_pagination_state: (a: bigint, b: number) => [number, number];
   readonly uniffi_matrix_sdk_ffi_fn_method_spaceroomlist_pagination_state: (a: number, b: number, c: number) => void;
+  readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceroomlist_reset: (a: bigint) => bigint;
+  readonly uniffi_matrix_sdk_ffi_fn_method_spaceroomlist_reset: (a: number) => bigint;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceroomlist_rooms: (a: bigint, b: number) => [number, number];
   readonly uniffi_matrix_sdk_ffi_fn_method_spaceroomlist_rooms: (a: number, b: number, c: number) => void;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceroomlist_space: (a: bigint, b: number) => [number, number];
@@ -2108,18 +2157,24 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_fn_method_spaceservice_add_child_to_space: (a: number, b: number, c: number) => bigint;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_editable_spaces: (a: bigint) => bigint;
   readonly uniffi_matrix_sdk_ffi_fn_method_spaceservice_editable_spaces: (a: number) => bigint;
+  readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_get_space_room: (a: bigint, b: number, c: number) => bigint;
+  readonly uniffi_matrix_sdk_ffi_fn_method_spaceservice_get_space_room: (a: number, b: number) => bigint;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_joined_parents_of_child: (a: bigint, b: number, c: number) => bigint;
   readonly uniffi_matrix_sdk_ffi_fn_method_spaceservice_joined_parents_of_child: (a: number, b: number) => bigint;
-  readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_joined_spaces: (a: bigint) => bigint;
-  readonly uniffi_matrix_sdk_ffi_fn_method_spaceservice_joined_spaces: (a: number) => bigint;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_leave_space: (a: bigint, b: number, c: number) => bigint;
   readonly uniffi_matrix_sdk_ffi_fn_method_spaceservice_leave_space: (a: number, b: number) => bigint;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_remove_child_from_space: (a: bigint, b: number, c: number, d: number, e: number) => bigint;
   readonly uniffi_matrix_sdk_ffi_fn_method_spaceservice_remove_child_from_space: (a: number, b: number, c: number) => bigint;
+  readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_space_filters: (a: bigint) => bigint;
+  readonly uniffi_matrix_sdk_ffi_fn_method_spaceservice_space_filters: (a: number) => bigint;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_space_room_list: (a: bigint, b: number, c: number) => bigint;
   readonly uniffi_matrix_sdk_ffi_fn_method_spaceservice_space_room_list: (a: number, b: number) => bigint;
-  readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_subscribe_to_joined_spaces: (a: bigint, b: bigint) => bigint;
-  readonly uniffi_matrix_sdk_ffi_fn_method_spaceservice_subscribe_to_joined_spaces: (a: number, b: bigint) => bigint;
+  readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_subscribe_to_space_filters: (a: bigint, b: bigint) => bigint;
+  readonly uniffi_matrix_sdk_ffi_fn_method_spaceservice_subscribe_to_space_filters: (a: number, b: bigint) => bigint;
+  readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_subscribe_to_top_level_joined_spaces: (a: bigint, b: bigint) => bigint;
+  readonly uniffi_matrix_sdk_ffi_fn_method_spaceservice_subscribe_to_top_level_joined_spaces: (a: number, b: bigint) => bigint;
+  readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_spaceservice_top_level_joined_spaces: (a: bigint) => bigint;
+  readonly uniffi_matrix_sdk_ffi_fn_method_spaceservice_top_level_joined_spaces: (a: number) => bigint;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_clone_span: (a: bigint, b: number) => bigint;
   readonly uniffi_matrix_sdk_ffi_fn_clone_span: (a: number, b: number) => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_free_span: (a: bigint, b: number) => void;
@@ -2164,8 +2219,6 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_fn_free_syncservicebuilder: (a: number, b: number) => void;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_syncservicebuilder_finish: (a: bigint) => bigint;
   readonly uniffi_matrix_sdk_ffi_fn_method_syncservicebuilder_finish: (a: number) => bigint;
-  readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_syncservicebuilder_with_cross_process_lock: (a: bigint, b: number) => bigint;
-  readonly uniffi_matrix_sdk_ffi_fn_method_syncservicebuilder_with_cross_process_lock: (a: number, b: number) => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_syncservicebuilder_with_offline_mode: (a: bigint, b: number) => bigint;
   readonly uniffi_matrix_sdk_ffi_fn_method_syncservicebuilder_with_offline_mode: (a: number, b: number) => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_syncservicebuilder_with_share_pos: (a: bigint, b: number, c: number) => bigint;
@@ -2178,6 +2231,10 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_fn_method_taskhandle_cancel: (a: number, b: number) => void;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_taskhandle_is_finished: (a: bigint, b: number) => number;
   readonly uniffi_matrix_sdk_ffi_fn_method_taskhandle_is_finished: (a: number, b: number) => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_fn_clone_threadroots: (a: bigint, b: number) => bigint;
+  readonly uniffi_matrix_sdk_ffi_fn_clone_threadroots: (a: number, b: number) => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_fn_free_threadroots: (a: bigint, b: number) => void;
+  readonly uniffi_matrix_sdk_ffi_fn_free_threadroots: (a: number, b: number) => void;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_clone_threadsummary: (a: bigint, b: number) => bigint;
   readonly uniffi_matrix_sdk_ffi_fn_clone_threadsummary: (a: number, b: number) => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_free_threadsummary: (a: bigint, b: number) => void;
@@ -2252,24 +2309,28 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_fn_clone_timelineevent: (a: number, b: number) => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_free_timelineevent: (a: bigint, b: number) => void;
   readonly uniffi_matrix_sdk_ffi_fn_free_timelineevent: (a: number, b: number) => void;
+  readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_timelineevent_content: (a: bigint, b: number) => [number, number];
+  readonly uniffi_matrix_sdk_ffi_fn_method_timelineevent_content: (a: number, b: number, c: number) => void;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_timelineevent_event_id: (a: bigint, b: number) => [number, number];
   readonly uniffi_matrix_sdk_ffi_fn_method_timelineevent_event_id: (a: number, b: number, c: number) => void;
-  readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_timelineevent_event_type: (a: bigint, b: number) => [number, number];
-  readonly uniffi_matrix_sdk_ffi_fn_method_timelineevent_event_type: (a: number, b: number, c: number) => void;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_timelineevent_sender_id: (a: bigint, b: number) => [number, number];
   readonly uniffi_matrix_sdk_ffi_fn_method_timelineevent_sender_id: (a: number, b: number, c: number) => void;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_timelineevent_thread_root_event_id: (a: bigint, b: number) => [number, number];
   readonly uniffi_matrix_sdk_ffi_fn_method_timelineevent_thread_root_event_id: (a: number, b: number, c: number) => void;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_method_timelineevent_timestamp: (a: bigint, b: number) => bigint;
   readonly uniffi_matrix_sdk_ffi_fn_method_timelineevent_timestamp: (a: number, b: number) => bigint;
-  readonly ubrn_uniffi_matrix_sdk_ffi_fn_clone_timelineeventtypefilter: (a: bigint, b: number) => bigint;
-  readonly uniffi_matrix_sdk_ffi_fn_clone_timelineeventtypefilter: (a: number, b: number) => number;
-  readonly ubrn_uniffi_matrix_sdk_ffi_fn_free_timelineeventtypefilter: (a: bigint, b: number) => void;
-  readonly uniffi_matrix_sdk_ffi_fn_free_timelineeventtypefilter: (a: number, b: number) => void;
-  readonly ubrn_uniffi_matrix_sdk_ffi_fn_constructor_timelineeventtypefilter_exclude: (a: number, b: number, c: number) => bigint;
-  readonly uniffi_matrix_sdk_ffi_fn_constructor_timelineeventtypefilter_exclude: (a: number, b: number) => number;
-  readonly ubrn_uniffi_matrix_sdk_ffi_fn_constructor_timelineeventtypefilter_include: (a: number, b: number, c: number) => bigint;
-  readonly uniffi_matrix_sdk_ffi_fn_constructor_timelineeventtypefilter_include: (a: number, b: number) => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_fn_clone_timelineeventfilter: (a: bigint, b: number) => bigint;
+  readonly uniffi_matrix_sdk_ffi_fn_clone_timelineeventfilter: (a: number, b: number) => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_fn_free_timelineeventfilter: (a: bigint, b: number) => void;
+  readonly uniffi_matrix_sdk_ffi_fn_free_timelineeventfilter: (a: number, b: number) => void;
+  readonly ubrn_uniffi_matrix_sdk_ffi_fn_constructor_timelineeventfilter_exclude: (a: number, b: number, c: number) => bigint;
+  readonly uniffi_matrix_sdk_ffi_fn_constructor_timelineeventfilter_exclude: (a: number, b: number) => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_fn_constructor_timelineeventfilter_exclude_event_types: (a: number, b: number, c: number) => bigint;
+  readonly uniffi_matrix_sdk_ffi_fn_constructor_timelineeventfilter_exclude_event_types: (a: number, b: number) => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_fn_constructor_timelineeventfilter_include: (a: number, b: number, c: number) => bigint;
+  readonly uniffi_matrix_sdk_ffi_fn_constructor_timelineeventfilter_include: (a: number, b: number) => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_fn_constructor_timelineeventfilter_include_event_types: (a: number, b: number, c: number) => bigint;
+  readonly uniffi_matrix_sdk_ffi_fn_constructor_timelineeventfilter_include_event_types: (a: number, b: number) => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_clone_timelineitem: (a: bigint, b: number) => bigint;
   readonly uniffi_matrix_sdk_ffi_fn_clone_timelineitem: (a: number, b: number) => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_free_timelineitem: (a: bigint, b: number) => void;
@@ -2334,6 +2395,8 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_fn_init_callback_vtable_clientdelegate: (a: number) => void;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_clientsessiondelegate: (a: any) => void;
   readonly uniffi_matrix_sdk_ffi_fn_init_callback_vtable_clientsessiondelegate: (a: number) => void;
+  readonly ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_duplicatekeyuploaderrorlistener: (a: any) => void;
+  readonly uniffi_matrix_sdk_ffi_fn_init_callback_vtable_duplicatekeyuploaderrorlistener: (a: number) => void;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_enablerecoveryprogresslistener: (a: any) => void;
   readonly uniffi_matrix_sdk_ffi_fn_init_callback_vtable_enablerecoveryprogresslistener: (a: number) => void;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_generatedqrloginprogresslistener: (a: any) => void;
@@ -2392,6 +2455,8 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_fn_init_callback_vtable_spaceroomlistspacelistener: (a: number) => void;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_spaceservicejoinedspaceslistener: (a: any) => void;
   readonly uniffi_matrix_sdk_ffi_fn_init_callback_vtable_spaceservicejoinedspaceslistener: (a: number) => void;
+  readonly ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_spaceservicespacefilterslistener: (a: any) => void;
+  readonly uniffi_matrix_sdk_ffi_fn_init_callback_vtable_spaceservicespacefilterslistener: (a: number) => void;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_syncnotificationlistener: (a: any) => void;
   readonly uniffi_matrix_sdk_ffi_fn_init_callback_vtable_syncnotificationlistener: (a: number) => void;
   readonly ubrn_uniffi_matrix_sdk_ffi_fn_init_callback_vtable_syncservicestateobserver: (a: any) => void;
@@ -2670,6 +2735,8 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_checksum_method_client_get_room_preview_from_room_id: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_get_session_verification_controller: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_client_get_session_verification_controller: () => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_get_store_sizes: () => number;
+  readonly uniffi_matrix_sdk_ffi_checksum_method_client_get_store_sizes: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_get_url: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_client_get_url: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_homeserver: () => number;
@@ -2682,6 +2749,8 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_checksum_method_client_ignored_users: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_is_livekit_rtc_supported: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_client_is_livekit_rtc_supported: () => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_is_login_with_qr_code_supported: () => number;
+  readonly uniffi_matrix_sdk_ffi_checksum_method_client_is_login_with_qr_code_supported: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_is_report_room_api_supported: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_client_is_report_room_api_supported: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_is_room_alias_available: () => number;
@@ -2710,12 +2779,16 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_checksum_method_client_observe_account_data_event: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_observe_room_account_data_event: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_client_observe_room_account_data_event: () => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_optimize_stores: () => number;
+  readonly uniffi_matrix_sdk_ffi_checksum_method_client_optimize_stores: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_register_notification_handler: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_client_register_notification_handler: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_remove_avatar: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_client_remove_avatar: () => number;
-  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_reset_server_info: () => number;
-  readonly uniffi_matrix_sdk_ffi_checksum_method_client_reset_server_info: () => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_reset_supported_versions: () => number;
+  readonly uniffi_matrix_sdk_ffi_checksum_method_client_reset_supported_versions: () => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_reset_well_known: () => number;
+  readonly uniffi_matrix_sdk_ffi_checksum_method_client_reset_well_known: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_resolve_room_alias: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_client_resolve_room_alias: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_restore_session: () => number;
@@ -2758,6 +2831,8 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_checksum_method_client_space_service: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_start_sso_login: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_client_start_sso_login: () => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_subscribe_to_duplicate_key_upload_errors: () => number;
+  readonly uniffi_matrix_sdk_ffi_checksum_method_client_subscribe_to_duplicate_key_upload_errors: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_subscribe_to_ignored_users: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_client_subscribe_to_ignored_users: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_client_subscribe_to_media_preview_config: () => number;
@@ -2794,8 +2869,8 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_backup_download_strategy: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_build: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_build: () => number;
-  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_cross_process_store_locks_holder_name: () => number;
-  readonly uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_cross_process_store_locks_holder_name: () => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_cross_process_lock_config: () => number;
+  readonly uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_cross_process_lock_config: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_decryption_settings: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_decryption_settings: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_disable_automatic_token_refresh: () => number;
@@ -2804,8 +2879,6 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_disable_built_in_root_certificates: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_disable_ssl_verification: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_disable_ssl_verification: () => number;
-  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_enable_oidc_refresh_lock: () => number;
-  readonly uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_enable_oidc_refresh_lock: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_enable_share_history_on_invite: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_enable_share_history_on_invite: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientbuilder_homeserver_url: () => number;
@@ -2990,6 +3063,8 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_checksum_method_notificationsettings_unmute_room: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_qrcodedata_server_name: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_qrcodedata_server_name: () => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_qrcodedata_to_bytes: () => number;
+  readonly uniffi_matrix_sdk_ffi_checksum_method_qrcodedata_to_bytes: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_active_members_count: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_room_active_members_count: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_active_room_call_participants: () => number;
@@ -3068,6 +3143,8 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_checksum_method_room_latest_event: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_leave: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_room_leave: () => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_list_threads: () => number;
+  readonly uniffi_matrix_sdk_ffi_checksum_method_room_list_threads: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_load_composer_draft: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_room_load_composer_draft: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_load_or_fetch_event: () => number;
@@ -3094,8 +3171,6 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_checksum_method_room_members_no_sync: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_membership: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_room_membership: () => number;
-  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_new_latest_event: () => number;
-  readonly uniffi_matrix_sdk_ffi_checksum_method_room_new_latest_event: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_own_user_id: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_room_own_user_id: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_predecessor_room: () => number;
@@ -3134,6 +3209,8 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_checksum_method_room_set_is_low_priority: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_set_name: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_room_set_name: () => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_set_own_member_display_name: () => number;
+  readonly uniffi_matrix_sdk_ffi_checksum_method_room_set_own_member_display_name: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_set_thread_subscription: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_room_set_thread_subscription: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_room_set_topic: () => number;
@@ -3266,6 +3343,8 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_checksum_method_roompowerlevels_can_user_send_state: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_roompowerlevels_can_user_trigger_room_notification: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_roompowerlevels_can_user_trigger_room_notification: () => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_roompowerlevels_events: () => number;
+  readonly uniffi_matrix_sdk_ffi_checksum_method_roompowerlevels_events: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_roompowerlevels_user_power_levels: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_roompowerlevels_user_power_levels: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_roompowerlevels_values: () => number;
@@ -3314,6 +3393,8 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_checksum_method_spaceroomlist_paginate: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceroomlist_pagination_state: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_spaceroomlist_pagination_state: () => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceroomlist_reset: () => number;
+  readonly uniffi_matrix_sdk_ffi_checksum_method_spaceroomlist_reset: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceroomlist_rooms: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_spaceroomlist_rooms: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceroomlist_space: () => number;
@@ -3328,18 +3409,24 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_checksum_method_spaceservice_add_child_to_space: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_editable_spaces: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_spaceservice_editable_spaces: () => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_get_space_room: () => number;
+  readonly uniffi_matrix_sdk_ffi_checksum_method_spaceservice_get_space_room: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_joined_parents_of_child: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_spaceservice_joined_parents_of_child: () => number;
-  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_joined_spaces: () => number;
-  readonly uniffi_matrix_sdk_ffi_checksum_method_spaceservice_joined_spaces: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_leave_space: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_spaceservice_leave_space: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_remove_child_from_space: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_spaceservice_remove_child_from_space: () => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_space_filters: () => number;
+  readonly uniffi_matrix_sdk_ffi_checksum_method_spaceservice_space_filters: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_space_room_list: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_spaceservice_space_room_list: () => number;
-  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_subscribe_to_joined_spaces: () => number;
-  readonly uniffi_matrix_sdk_ffi_checksum_method_spaceservice_subscribe_to_joined_spaces: () => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_subscribe_to_space_filters: () => number;
+  readonly uniffi_matrix_sdk_ffi_checksum_method_spaceservice_subscribe_to_space_filters: () => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_subscribe_to_top_level_joined_spaces: () => number;
+  readonly uniffi_matrix_sdk_ffi_checksum_method_spaceservice_subscribe_to_top_level_joined_spaces: () => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservice_top_level_joined_spaces: () => number;
+  readonly uniffi_matrix_sdk_ffi_checksum_method_spaceservice_top_level_joined_spaces: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_span_enter: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_span_enter: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_span_exit: () => number;
@@ -3362,8 +3449,6 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_checksum_method_syncservice_stop: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_syncservicebuilder_finish: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_syncservicebuilder_finish: () => number;
-  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_syncservicebuilder_with_cross_process_lock: () => number;
-  readonly uniffi_matrix_sdk_ffi_checksum_method_syncservicebuilder_with_cross_process_lock: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_syncservicebuilder_with_offline_mode: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_syncservicebuilder_with_offline_mode: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_syncservicebuilder_with_share_pos: () => number;
@@ -3434,10 +3519,10 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_checksum_method_timeline_toggle_reaction: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_timeline_unpin_event: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_timeline_unpin_event: () => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_timelineevent_content: () => number;
+  readonly uniffi_matrix_sdk_ffi_checksum_method_timelineevent_content: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_timelineevent_event_id: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_timelineevent_event_id: () => number;
-  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_timelineevent_event_type: () => number;
-  readonly uniffi_matrix_sdk_ffi_checksum_method_timelineevent_event_type: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_timelineevent_sender_id: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_timelineevent_sender_id: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_timelineevent_thread_root_event_id: () => number;
@@ -3492,10 +3577,14 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_checksum_constructor_span_new: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_constructor_span_new_bridge_span: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_constructor_span_new_bridge_span: () => number;
-  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_constructor_timelineeventtypefilter_exclude: () => number;
-  readonly uniffi_matrix_sdk_ffi_checksum_constructor_timelineeventtypefilter_exclude: () => number;
-  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_constructor_timelineeventtypefilter_include: () => number;
-  readonly uniffi_matrix_sdk_ffi_checksum_constructor_timelineeventtypefilter_include: () => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_constructor_timelineeventfilter_exclude: () => number;
+  readonly uniffi_matrix_sdk_ffi_checksum_constructor_timelineeventfilter_exclude: () => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_constructor_timelineeventfilter_exclude_event_types: () => number;
+  readonly uniffi_matrix_sdk_ffi_checksum_constructor_timelineeventfilter_exclude_event_types: () => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_constructor_timelineeventfilter_include: () => number;
+  readonly uniffi_matrix_sdk_ffi_checksum_constructor_timelineeventfilter_include: () => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_constructor_timelineeventfilter_include_event_types: () => number;
+  readonly uniffi_matrix_sdk_ffi_checksum_constructor_timelineeventfilter_include_event_types: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_accountdatalistener_on_change: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_accountdatalistener_on_change: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_backupstatelistener_on_update: () => number;
@@ -3506,10 +3595,14 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_checksum_method_calldeclinelistener_call: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientdelegate_did_receive_auth_error: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_clientdelegate_did_receive_auth_error: () => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientdelegate_on_background_task_error_report: () => number;
+  readonly uniffi_matrix_sdk_ffi_checksum_method_clientdelegate_on_background_task_error_report: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientsessiondelegate_retrieve_session_from_keychain: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_clientsessiondelegate_retrieve_session_from_keychain: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_clientsessiondelegate_save_session_in_keychain: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_clientsessiondelegate_save_session_in_keychain: () => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_duplicatekeyuploaderrorlistener_on_duplicate_key_upload_error: () => number;
+  readonly uniffi_matrix_sdk_ffi_checksum_method_duplicatekeyuploaderrorlistener_on_duplicate_key_upload_error: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_enablerecoveryprogresslistener_on_update: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_enablerecoveryprogresslistener_on_update: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_generatedqrloginprogresslistener_on_update: () => number;
@@ -3580,6 +3673,8 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_checksum_method_spaceroomlistspacelistener_on_update: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservicejoinedspaceslistener_on_update: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_spaceservicejoinedspaceslistener_on_update: () => number;
+  readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_spaceservicespacefilterslistener_on_update: () => number;
+  readonly uniffi_matrix_sdk_ffi_checksum_method_spaceservicespacefilterslistener_on_update: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_syncnotificationlistener_on_notification: () => number;
   readonly uniffi_matrix_sdk_ffi_checksum_method_syncnotificationlistener_on_notification: () => number;
   readonly ubrn_uniffi_matrix_sdk_ffi_checksum_method_syncservicestateobserver_on_update: () => number;
@@ -3596,14 +3691,6 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_ffi_checksum_method_widgetcapabilitiesprovider_acquire_capabilities: () => number;
   readonly ubrn_ffi_matrix_sdk_ffi_uniffi_contract_version: () => number;
   readonly ffi_matrix_sdk_ffi_uniffi_contract_version: () => number;
-  readonly ubrn_ffi_matrix_sdk_common_uniffi_contract_version: () => number;
-  readonly ffi_matrix_sdk_common_uniffi_contract_version: () => number;
-  readonly ubrn_ffi_matrix_sdk_base_uniffi_contract_version: () => number;
-  readonly ffi_matrix_sdk_base_uniffi_contract_version: () => number;
-  readonly ubrn_ffi_matrix_sdk_ui_uniffi_contract_version: () => number;
-  readonly ffi_matrix_sdk_ui_uniffi_contract_version: () => number;
-  readonly ubrn_ffi_matrix_sdk_crypto_uniffi_contract_version: () => number;
-  readonly ffi_matrix_sdk_crypto_uniffi_contract_version: () => number;
   readonly ubrn_uniffi_matrix_sdk_fn_clone_oauthauthorizationdata: (a: bigint, b: number) => bigint;
   readonly uniffi_matrix_sdk_fn_clone_oauthauthorizationdata: (a: number, b: number) => number;
   readonly ubrn_uniffi_matrix_sdk_fn_free_oauthauthorizationdata: (a: bigint, b: number) => void;
@@ -3614,6 +3701,26 @@ export interface InitOutput {
   readonly uniffi_matrix_sdk_checksum_method_oauthauthorizationdata_login_url: () => number;
   readonly ubrn_ffi_matrix_sdk_uniffi_contract_version: () => number;
   readonly ffi_matrix_sdk_uniffi_contract_version: () => number;
+  readonly ubrn_ffi_matrix_sdk_base_uniffi_contract_version: () => number;
+  readonly ffi_matrix_sdk_base_uniffi_contract_version: () => number;
+  readonly ubrn_ffi_matrix_sdk_common_uniffi_contract_version: () => number;
+  readonly ffi_matrix_sdk_common_uniffi_contract_version: () => number;
+  readonly ubrn_ffi_matrix_sdk_ui_uniffi_contract_version: () => number;
+  readonly ffi_matrix_sdk_ui_uniffi_contract_version: () => number;
+  readonly ubrn_uniffi_matrix_sdk_crypto_fn_clone_backupsecrets: (a: bigint, b: number) => bigint;
+  readonly uniffi_matrix_sdk_crypto_fn_clone_backupsecrets: (a: number, b: number) => number;
+  readonly ubrn_uniffi_matrix_sdk_crypto_fn_free_backupsecrets: (a: bigint, b: number) => void;
+  readonly uniffi_matrix_sdk_crypto_fn_free_backupsecrets: (a: number, b: number) => void;
+  readonly ubrn_uniffi_matrix_sdk_crypto_fn_clone_crosssigningsecrets: (a: bigint, b: number) => bigint;
+  readonly uniffi_matrix_sdk_crypto_fn_clone_crosssigningsecrets: (a: number, b: number) => number;
+  readonly ubrn_uniffi_matrix_sdk_crypto_fn_free_crosssigningsecrets: (a: bigint, b: number) => void;
+  readonly uniffi_matrix_sdk_crypto_fn_free_crosssigningsecrets: (a: number, b: number) => void;
+  readonly ubrn_uniffi_matrix_sdk_crypto_fn_clone_secretsbundle: (a: bigint, b: number) => bigint;
+  readonly uniffi_matrix_sdk_crypto_fn_clone_secretsbundle: (a: number, b: number) => number;
+  readonly ubrn_uniffi_matrix_sdk_crypto_fn_free_secretsbundle: (a: bigint, b: number) => void;
+  readonly uniffi_matrix_sdk_crypto_fn_free_secretsbundle: (a: number, b: number) => void;
+  readonly ubrn_ffi_matrix_sdk_crypto_uniffi_contract_version: () => number;
+  readonly ffi_matrix_sdk_crypto_uniffi_contract_version: () => number;
   readonly __wbg_rustcallstatus_free: (a: number, b: number) => void;
   readonly __wbg_get_rustcallstatus_code: (a: number) => number;
   readonly __wbg_set_rustcallstatus_code: (a: number, b: number) => void;
@@ -3904,17 +4011,17 @@ export interface InitOutput {
   readonly ffi_matrix_sdk_common_rust_future_cancel_void: (a: bigint) => void;
   readonly ffi_matrix_sdk_common_rust_future_complete_void: (a: bigint, b: number) => void;
   readonly ffi_matrix_sdk_common_rust_future_free_void: (a: bigint) => void;
-  readonly wasm_bindgen__convert__closures_____invoke__h2d054f5ec5098c8c: (a: number, b: number, c: any) => void;
-  readonly wasm_bindgen__closure__destroy__h1a0198950aa2e298: (a: number, b: number) => void;
-  readonly wasm_bindgen__convert__closures_____invoke__h3d3b30c8daf302f7: (a: number, b: number, c: any) => void;
-  readonly wasm_bindgen__closure__destroy__h08d81abc7d1d848d: (a: number, b: number) => void;
-  readonly wasm_bindgen__convert__closures_____invoke__h4c87344b03f60ed2: (a: number, b: number) => void;
-  readonly wasm_bindgen__closure__destroy__h25db266f1b82076f: (a: number, b: number) => void;
-  readonly wasm_bindgen__convert__closures_____invoke__h3b6a4624a2b59949: (a: number, b: number, c: any) => [number, number];
-  readonly wasm_bindgen__closure__destroy__h0dd61ffb6ab9dd03: (a: number, b: number) => void;
-  readonly wasm_bindgen__convert__closures_____invoke__hbd25f8affbe9487e: (a: number, b: number) => void;
-  readonly wasm_bindgen__convert__closures_____invoke__hb50df3b0b7837b50: (a: number, b: number) => void;
-  readonly wasm_bindgen__closure__destroy__h2bd330e23f35e659: (a: number, b: number) => void;
+  readonly wasm_bindgen__convert__closures_____invoke__haf45377fdb53aaef: (a: number, b: number) => void;
+  readonly wasm_bindgen__closure__destroy__h363773e0f0d6221c: (a: number, b: number) => void;
+  readonly wasm_bindgen__convert__closures_____invoke__h20f74f3090bd04a0: (a: number, b: number, c: any) => void;
+  readonly wasm_bindgen__closure__destroy__h76ab8c5168ab1aef: (a: number, b: number) => void;
+  readonly wasm_bindgen__convert__closures_____invoke__h7ccfc24f8c57c53e: (a: number, b: number) => void;
+  readonly wasm_bindgen__closure__destroy__h48b8e8474f1aa479: (a: number, b: number) => void;
+  readonly wasm_bindgen__convert__closures_____invoke__h0b8ba5f847e4400f: (a: number, b: number, c: any) => [number, number];
+  readonly wasm_bindgen__closure__destroy__h76ca53e4865dbbe1: (a: number, b: number) => void;
+  readonly wasm_bindgen__convert__closures_____invoke__hfb55c35cdb170dfc: (a: number, b: number) => void;
+  readonly wasm_bindgen__convert__closures_____invoke__hb4428dffc5329c40: (a: number, b: number, c: any) => void;
+  readonly wasm_bindgen__closure__destroy__ha0282067daadd937: (a: number, b: number) => void;
   readonly __wbindgen_malloc: (a: number, b: number) => number;
   readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;
   readonly __wbindgen_exn_store: (a: number) => void;

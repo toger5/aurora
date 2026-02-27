@@ -6,13 +6,22 @@
 // @ts-nocheck
 import * as wasmBundle from "./wasm-bindgen/index.js";
 import {
+  type FfiConverter, 
   type UniffiByteArray, 
+  type UniffiObjectFactory, 
+  type UniffiRustArcPtr, 
+  type UnsafeMutableRawPointer, 
   AbstractFfiConverterByteArray, 
   FfiConverterInt32, 
+  FfiConverterObject, 
+  FfiConverterUInt64, 
   RustBuffer, 
+  UniffiAbstractObject, 
   UniffiError, 
   UniffiInternalError, 
   UniffiRustCaller, 
+  destructorGuardSymbol, 
+  pointerLiteralSymbol, 
   uniffiCreateFfiConverterString, 
   uniffiCreateRecord, 
   uniffiTypeNameSymbol, 
@@ -105,6 +114,8 @@ const stringConverter = (() => {
     };
 })();
 const FfiConverterString = uniffiCreateFfiConverterString(stringConverter);
+
+
 
 
 /**
@@ -306,8 +317,8 @@ export enum LoginQrCodeDecodeError_Tags {
     NotEnoughData = "NotEnoughData",
     NotUtf8 = "NotUtf8",
     UrlParse = "UrlParse",
-    InvalidMode = "InvalidMode",
-    InvalidVersion = "InvalidVersion",
+    InvalidIntent = "InvalidIntent",
+    InvalidType = "InvalidType",
     Base64 = "Base64",
     InvalidPrefix = "InvalidPrefix"
 }
@@ -397,10 +408,10 @@ export const LoginQrCodeDecodeError = (() => {
         }
     }
     /**
-     * The QR code data contains an invalid mode, we expect the login (0x03)
-     * mode or the reciprocate mode (0x04).
+     * The QR code data contains an invalid intent, we expect the login
+     * intent or the reciprocate intent.
      */
-    class InvalidMode extends UniffiError {
+    class InvalidIntent extends UniffiError {
         /**
          * @private
          * This field is private and should not be used.
@@ -412,22 +423,22 @@ export const LoginQrCodeDecodeError = (() => {
          */
         readonly [variantOrdinalSymbol] = 4;
 
-        public readonly tag = LoginQrCodeDecodeError_Tags.InvalidMode;
+        public readonly tag = LoginQrCodeDecodeError_Tags.InvalidIntent;
 
         constructor(message: string) {
-            super("LoginQrCodeDecodeError", "InvalidMode", message);
+            super("LoginQrCodeDecodeError", "InvalidIntent", message);
         }
 
-        static instanceOf(e: any): e is InvalidMode {
+        static instanceOf(e: any): e is InvalidIntent {
             return (
                 instanceOf(e) && (e as any)[variantOrdinalSymbol] === 4
             );
         }
     }
     /**
-     * The QR code data contains an unsupported version.
+     * The QR code data contains an unsupported type.
      */
-    class InvalidVersion extends UniffiError {
+    class InvalidType extends UniffiError {
         /**
          * @private
          * This field is private and should not be used.
@@ -439,13 +450,13 @@ export const LoginQrCodeDecodeError = (() => {
          */
         readonly [variantOrdinalSymbol] = 5;
 
-        public readonly tag = LoginQrCodeDecodeError_Tags.InvalidVersion;
+        public readonly tag = LoginQrCodeDecodeError_Tags.InvalidType;
 
         constructor(message: string) {
-            super("LoginQrCodeDecodeError", "InvalidVersion", message);
+            super("LoginQrCodeDecodeError", "InvalidType", message);
         }
 
-        static instanceOf(e: any): e is InvalidVersion {
+        static instanceOf(e: any): e is InvalidType {
             return (
                 instanceOf(e) && (e as any)[variantOrdinalSymbol] === 5
             );
@@ -515,8 +526,8 @@ export const LoginQrCodeDecodeError = (() => {
         NotEnoughData,
         NotUtf8,
         UrlParse,
-        InvalidMode,
-        InvalidVersion,
+        InvalidIntent,
+        InvalidType,
         Base64,
         InvalidPrefix,
         instanceOf,
@@ -548,10 +559,10 @@ const FfiConverterTypeLoginQrCodeDecodeError = (() => {
                 case 3: return new LoginQrCodeDecodeError.UrlParse(FfiConverterString.read(from)
                 );
             
-                case 4: return new LoginQrCodeDecodeError.InvalidMode(FfiConverterString.read(from)
+                case 4: return new LoginQrCodeDecodeError.InvalidIntent(FfiConverterString.read(from)
                 );
             
-                case 5: return new LoginQrCodeDecodeError.InvalidVersion(FfiConverterString.read(from)
+                case 5: return new LoginQrCodeDecodeError.InvalidType(FfiConverterString.read(from)
                 );
             
                 case 6: return new LoginQrCodeDecodeError.Base64(FfiConverterString.read(from)
@@ -812,6 +823,341 @@ const FfiConverterTypeUtdCause = (() => {
 
 
 
+/**
+ * Enum for the algorithm-specific secrets for the room key backup.
+ */
+export interface BackupSecretsInterface {
+    
+}
+
+
+/**
+ * Enum for the algorithm-specific secrets for the room key backup.
+ */
+export class BackupSecrets extends UniffiAbstractObject implements BackupSecretsInterface {
+
+    readonly [uniffiTypeNameSymbol] = "BackupSecrets";
+    readonly [destructorGuardSymbol]: UniffiRustArcPtr;
+    readonly [pointerLiteralSymbol]: UnsafeMutableRawPointer;
+    // No primary constructor declared for this class.
+private constructor(pointer: UnsafeMutableRawPointer) {
+    super();
+    this[pointerLiteralSymbol] = pointer;
+    this[destructorGuardSymbol] = uniffiTypeBackupSecretsObjectFactory.bless(pointer);
+}
+
+    
+
+    
+
+    /**
+     * {@inheritDoc uniffi-bindgen-react-native#UniffiAbstractObject.uniffiDestroy}
+     */
+    uniffiDestroy(): void {
+        const ptr = (this as any)[destructorGuardSymbol];
+        if (ptr !== undefined) {
+            const pointer = uniffiTypeBackupSecretsObjectFactory.pointer(this);
+            uniffiTypeBackupSecretsObjectFactory.freePointer(pointer);
+            uniffiTypeBackupSecretsObjectFactory.unbless(ptr);
+            delete (this as any)[destructorGuardSymbol];
+        }
+    }
+
+    static instanceOf(obj: any): obj is BackupSecrets {
+        return uniffiTypeBackupSecretsObjectFactory.isConcreteType(obj);
+    }
+
+    
+}
+
+const uniffiTypeBackupSecretsObjectFactory: UniffiObjectFactory<BackupSecretsInterface> = (() => {
+    
+    /// <reference lib="es2021" />
+    const registry = typeof FinalizationRegistry !== 'undefined' ? new FinalizationRegistry<UnsafeMutableRawPointer>((heldValue: UnsafeMutableRawPointer) => {
+        uniffiTypeBackupSecretsObjectFactory.freePointer(heldValue);
+    }) : null;
+    
+    return {
+    create(pointer: UnsafeMutableRawPointer): BackupSecretsInterface {
+        const instance = Object.create(BackupSecrets.prototype);
+        instance[pointerLiteralSymbol] = pointer;
+        instance[destructorGuardSymbol] = this.bless(pointer);
+        instance[uniffiTypeNameSymbol] = "BackupSecrets";
+        return instance;
+    },
+
+    
+    bless(p: UnsafeMutableRawPointer): UniffiRustArcPtr {
+        const ptr = {
+            p, // make sure this object doesn't get optimized away.
+            markDestroyed: () => undefined,
+        };
+        if (registry) {
+            registry.register(ptr, p, ptr);
+        }
+        return ptr;
+    },
+
+    unbless(ptr: UniffiRustArcPtr) {
+        if (registry) {
+            registry.unregister(ptr);
+        }
+    },
+
+    pointer(obj: BackupSecretsInterface): UnsafeMutableRawPointer {
+        if ((obj as any)[destructorGuardSymbol] === undefined) {
+            throw new UniffiInternalError.UnexpectedNullPointer();
+        }
+        return (obj as any)[pointerLiteralSymbol];
+    },
+
+    clonePointer(obj: BackupSecretsInterface): UnsafeMutableRawPointer {
+        const pointer = this.pointer(obj);
+        return uniffiCaller.rustCall(
+            /*caller:*/ (callStatus) => nativeModule().ubrn_uniffi_matrix_sdk_crypto_fn_clone_backupsecrets(pointer, callStatus),
+            /*liftString:*/ FfiConverterString.lift
+        );
+    },
+
+    freePointer(pointer: UnsafeMutableRawPointer): void {
+        uniffiCaller.rustCall(
+            /*caller:*/ (callStatus) => nativeModule().ubrn_uniffi_matrix_sdk_crypto_fn_free_backupsecrets(pointer, callStatus),
+            /*liftString:*/ FfiConverterString.lift
+        );
+    },
+
+    isConcreteType(obj: any): obj is BackupSecretsInterface {
+        return obj[destructorGuardSymbol] && obj[uniffiTypeNameSymbol] === "BackupSecrets";
+    },
+}})();
+// FfiConverter for BackupSecretsInterface
+const FfiConverterTypeBackupSecrets =  new FfiConverterObject(uniffiTypeBackupSecretsObjectFactory);
+
+
+/**
+ * Data for the secrets bundle containing the cross-signing keys.
+ */
+export interface CrossSigningSecretsInterface {
+    
+}
+
+
+/**
+ * Data for the secrets bundle containing the cross-signing keys.
+ */
+export class CrossSigningSecrets extends UniffiAbstractObject implements CrossSigningSecretsInterface {
+
+    readonly [uniffiTypeNameSymbol] = "CrossSigningSecrets";
+    readonly [destructorGuardSymbol]: UniffiRustArcPtr;
+    readonly [pointerLiteralSymbol]: UnsafeMutableRawPointer;
+    // No primary constructor declared for this class.
+private constructor(pointer: UnsafeMutableRawPointer) {
+    super();
+    this[pointerLiteralSymbol] = pointer;
+    this[destructorGuardSymbol] = uniffiTypeCrossSigningSecretsObjectFactory.bless(pointer);
+}
+
+    
+
+    
+
+    /**
+     * {@inheritDoc uniffi-bindgen-react-native#UniffiAbstractObject.uniffiDestroy}
+     */
+    uniffiDestroy(): void {
+        const ptr = (this as any)[destructorGuardSymbol];
+        if (ptr !== undefined) {
+            const pointer = uniffiTypeCrossSigningSecretsObjectFactory.pointer(this);
+            uniffiTypeCrossSigningSecretsObjectFactory.freePointer(pointer);
+            uniffiTypeCrossSigningSecretsObjectFactory.unbless(ptr);
+            delete (this as any)[destructorGuardSymbol];
+        }
+    }
+
+    static instanceOf(obj: any): obj is CrossSigningSecrets {
+        return uniffiTypeCrossSigningSecretsObjectFactory.isConcreteType(obj);
+    }
+
+    
+}
+
+const uniffiTypeCrossSigningSecretsObjectFactory: UniffiObjectFactory<CrossSigningSecretsInterface> = (() => {
+    
+    /// <reference lib="es2021" />
+    const registry = typeof FinalizationRegistry !== 'undefined' ? new FinalizationRegistry<UnsafeMutableRawPointer>((heldValue: UnsafeMutableRawPointer) => {
+        uniffiTypeCrossSigningSecretsObjectFactory.freePointer(heldValue);
+    }) : null;
+    
+    return {
+    create(pointer: UnsafeMutableRawPointer): CrossSigningSecretsInterface {
+        const instance = Object.create(CrossSigningSecrets.prototype);
+        instance[pointerLiteralSymbol] = pointer;
+        instance[destructorGuardSymbol] = this.bless(pointer);
+        instance[uniffiTypeNameSymbol] = "CrossSigningSecrets";
+        return instance;
+    },
+
+    
+    bless(p: UnsafeMutableRawPointer): UniffiRustArcPtr {
+        const ptr = {
+            p, // make sure this object doesn't get optimized away.
+            markDestroyed: () => undefined,
+        };
+        if (registry) {
+            registry.register(ptr, p, ptr);
+        }
+        return ptr;
+    },
+
+    unbless(ptr: UniffiRustArcPtr) {
+        if (registry) {
+            registry.unregister(ptr);
+        }
+    },
+
+    pointer(obj: CrossSigningSecretsInterface): UnsafeMutableRawPointer {
+        if ((obj as any)[destructorGuardSymbol] === undefined) {
+            throw new UniffiInternalError.UnexpectedNullPointer();
+        }
+        return (obj as any)[pointerLiteralSymbol];
+    },
+
+    clonePointer(obj: CrossSigningSecretsInterface): UnsafeMutableRawPointer {
+        const pointer = this.pointer(obj);
+        return uniffiCaller.rustCall(
+            /*caller:*/ (callStatus) => nativeModule().ubrn_uniffi_matrix_sdk_crypto_fn_clone_crosssigningsecrets(pointer, callStatus),
+            /*liftString:*/ FfiConverterString.lift
+        );
+    },
+
+    freePointer(pointer: UnsafeMutableRawPointer): void {
+        uniffiCaller.rustCall(
+            /*caller:*/ (callStatus) => nativeModule().ubrn_uniffi_matrix_sdk_crypto_fn_free_crosssigningsecrets(pointer, callStatus),
+            /*liftString:*/ FfiConverterString.lift
+        );
+    },
+
+    isConcreteType(obj: any): obj is CrossSigningSecretsInterface {
+        return obj[destructorGuardSymbol] && obj[uniffiTypeNameSymbol] === "CrossSigningSecrets";
+    },
+}})();
+// FfiConverter for CrossSigningSecretsInterface
+const FfiConverterTypeCrossSigningSecrets =  new FfiConverterObject(uniffiTypeCrossSigningSecretsObjectFactory);
+
+
+/**
+ * Struct containing the bundle of secrets to fully activate a new devices for
+ * end-to-end encryption.
+ */
+export interface SecretsBundleInterface {
+    
+}
+
+
+/**
+ * Struct containing the bundle of secrets to fully activate a new devices for
+ * end-to-end encryption.
+ */
+export class SecretsBundle extends UniffiAbstractObject implements SecretsBundleInterface {
+
+    readonly [uniffiTypeNameSymbol] = "SecretsBundle";
+    readonly [destructorGuardSymbol]: UniffiRustArcPtr;
+    readonly [pointerLiteralSymbol]: UnsafeMutableRawPointer;
+    // No primary constructor declared for this class.
+private constructor(pointer: UnsafeMutableRawPointer) {
+    super();
+    this[pointerLiteralSymbol] = pointer;
+    this[destructorGuardSymbol] = uniffiTypeSecretsBundleObjectFactory.bless(pointer);
+}
+
+    
+
+    
+
+    /**
+     * {@inheritDoc uniffi-bindgen-react-native#UniffiAbstractObject.uniffiDestroy}
+     */
+    uniffiDestroy(): void {
+        const ptr = (this as any)[destructorGuardSymbol];
+        if (ptr !== undefined) {
+            const pointer = uniffiTypeSecretsBundleObjectFactory.pointer(this);
+            uniffiTypeSecretsBundleObjectFactory.freePointer(pointer);
+            uniffiTypeSecretsBundleObjectFactory.unbless(ptr);
+            delete (this as any)[destructorGuardSymbol];
+        }
+    }
+
+    static instanceOf(obj: any): obj is SecretsBundle {
+        return uniffiTypeSecretsBundleObjectFactory.isConcreteType(obj);
+    }
+
+    
+}
+
+const uniffiTypeSecretsBundleObjectFactory: UniffiObjectFactory<SecretsBundleInterface> = (() => {
+    
+    /// <reference lib="es2021" />
+    const registry = typeof FinalizationRegistry !== 'undefined' ? new FinalizationRegistry<UnsafeMutableRawPointer>((heldValue: UnsafeMutableRawPointer) => {
+        uniffiTypeSecretsBundleObjectFactory.freePointer(heldValue);
+    }) : null;
+    
+    return {
+    create(pointer: UnsafeMutableRawPointer): SecretsBundleInterface {
+        const instance = Object.create(SecretsBundle.prototype);
+        instance[pointerLiteralSymbol] = pointer;
+        instance[destructorGuardSymbol] = this.bless(pointer);
+        instance[uniffiTypeNameSymbol] = "SecretsBundle";
+        return instance;
+    },
+
+    
+    bless(p: UnsafeMutableRawPointer): UniffiRustArcPtr {
+        const ptr = {
+            p, // make sure this object doesn't get optimized away.
+            markDestroyed: () => undefined,
+        };
+        if (registry) {
+            registry.register(ptr, p, ptr);
+        }
+        return ptr;
+    },
+
+    unbless(ptr: UniffiRustArcPtr) {
+        if (registry) {
+            registry.unregister(ptr);
+        }
+    },
+
+    pointer(obj: SecretsBundleInterface): UnsafeMutableRawPointer {
+        if ((obj as any)[destructorGuardSymbol] === undefined) {
+            throw new UniffiInternalError.UnexpectedNullPointer();
+        }
+        return (obj as any)[pointerLiteralSymbol];
+    },
+
+    clonePointer(obj: SecretsBundleInterface): UnsafeMutableRawPointer {
+        const pointer = this.pointer(obj);
+        return uniffiCaller.rustCall(
+            /*caller:*/ (callStatus) => nativeModule().ubrn_uniffi_matrix_sdk_crypto_fn_clone_secretsbundle(pointer, callStatus),
+            /*liftString:*/ FfiConverterString.lift
+        );
+    },
+
+    freePointer(pointer: UnsafeMutableRawPointer): void {
+        uniffiCaller.rustCall(
+            /*caller:*/ (callStatus) => nativeModule().ubrn_uniffi_matrix_sdk_crypto_fn_free_secretsbundle(pointer, callStatus),
+            /*liftString:*/ FfiConverterString.lift
+        );
+    },
+
+    isConcreteType(obj: any): obj is SecretsBundleInterface {
+        return obj[destructorGuardSymbol] && obj[uniffiTypeNameSymbol] === "SecretsBundle";
+    },
+}})();
+// FfiConverter for SecretsBundleInterface
+const FfiConverterTypeSecretsBundle =  new FfiConverterObject(uniffiTypeSecretsBundleObjectFactory);
+
+
 
 /**
  * This should be called before anything else.
@@ -837,11 +1183,14 @@ function uniffiEnsureInitialized() {
 export default Object.freeze({
   initialize: uniffiEnsureInitialized,
   converters: {
+    FfiConverterTypeBackupSecrets,
     FfiConverterTypeCollectStrategy,
+    FfiConverterTypeCrossSigningSecrets,
     FfiConverterTypeDecryptionSettings,
     FfiConverterTypeIdentityState,
     FfiConverterTypeLocalTrust,
     FfiConverterTypeLoginQrCodeDecodeError,
+    FfiConverterTypeSecretsBundle,
     FfiConverterTypeSignatureState,
     FfiConverterTypeTrustRequirement,
     FfiConverterTypeUtdCause,

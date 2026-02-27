@@ -907,7 +907,16 @@ export enum Intent {
     /**
      * The user wants to start a call in a "Direct Message" (DM) room.
      */
-    StartCallDm
+    StartCallDm,
+    /**
+     * The user wants to start a voice call in a "Direct Message" (DM) room.
+     */
+    StartCallDmVoice,
+    /**
+     * The user wants to join an existing  voice call that is a "Direct
+     * Message" (DM) room.
+     */
+    JoinExistingDmVoice
 }
 
 const FfiConverterTypeIntent = (() => {
@@ -920,6 +929,8 @@ const FfiConverterTypeIntent = (() => {
                 case 2: return Intent.JoinExisting;
                 case 3: return Intent.JoinExistingDm;
                 case 4: return Intent.StartCallDm;
+                case 5: return Intent.StartCallDmVoice;
+                case 6: return Intent.JoinExistingDmVoice;
                 default: throw new UniffiInternalError.UnexpectedEnumCase();
             }
         }
@@ -929,6 +940,8 @@ const FfiConverterTypeIntent = (() => {
                 case Intent.JoinExisting: return ordinalConverter.write(2, into);
                 case Intent.JoinExistingDm: return ordinalConverter.write(3, into);
                 case Intent.StartCallDm: return ordinalConverter.write(4, into);
+                case Intent.StartCallDmVoice: return ordinalConverter.write(5, into);
+                case Intent.JoinExistingDmVoice: return ordinalConverter.write(6, into);
             }
         }
         allocationSize(value: TypeName): number {
@@ -981,6 +994,161 @@ const FfiConverterTypeNotificationType = (() => {
 })();
 
 
+
+
+
+// Enum: PaginationStatus
+export enum PaginationStatus_Tags {
+    Idle = "Idle",
+    Paginating = "Paginating"
+}
+/**
+ * Status for the pagination on a cache.
+ */
+export const PaginationStatus = (() => {
+    
+
+    type Idle__interface = {
+        tag: PaginationStatus_Tags.Idle;
+        inner: Readonly<{hitTimelineStart: boolean}>
+    };
+
+    
+    /**
+     * No pagination is happening right now.
+     */
+    class Idle_ extends UniffiEnum implements Idle__interface {
+        /**
+         * @private
+         * This field is private and should not be used, use `tag` instead.
+         */
+        readonly [uniffiTypeNameSymbol] = "PaginationStatus";
+        readonly tag = PaginationStatus_Tags.Idle;
+        readonly inner: Readonly<{hitTimelineStart: boolean}>;
+        constructor(inner: { 
+        /**
+         * Have we hit the start of the timeline, i.e. paginating wouldn't
+         * have any effect?
+         */hitTimelineStart: boolean }) {
+            super("PaginationStatus", "Idle");
+            this.inner = Object.freeze(inner);
+        }
+
+        static new(inner: { 
+        /**
+         * Have we hit the start of the timeline, i.e. paginating wouldn't
+         * have any effect?
+         */hitTimelineStart: boolean }): Idle_ {
+            return new Idle_(inner);
+        }
+
+        static instanceOf(obj: any): obj is Idle_ {
+            return obj.tag === PaginationStatus_Tags.Idle;
+        }
+
+        
+
+    }
+    
+
+    type Paginating__interface = {
+        tag: PaginationStatus_Tags.Paginating
+    };
+
+    
+    /**
+     * Pagination is already running in the background.
+     */
+    class Paginating_ extends UniffiEnum implements Paginating__interface {
+        /**
+         * @private
+         * This field is private and should not be used, use `tag` instead.
+         */
+        readonly [uniffiTypeNameSymbol] = "PaginationStatus";
+        readonly tag = PaginationStatus_Tags.Paginating;
+        constructor() {
+            super("PaginationStatus", "Paginating");
+        }
+
+        static new(): Paginating_ {
+            return new Paginating_();
+        }
+
+        static instanceOf(obj: any): obj is Paginating_ {
+            return obj.tag === PaginationStatus_Tags.Paginating;
+        }
+
+        
+
+    }
+
+    function instanceOf(obj: any): obj is PaginationStatus {
+        return obj[uniffiTypeNameSymbol] === "PaginationStatus";
+    }
+
+    return Object.freeze({
+        instanceOf,
+  Idle: Idle_, 
+  Paginating: Paginating_
+    });
+
+})();
+
+
+/**
+ * Status for the pagination on a cache.
+ */
+
+export type PaginationStatus = InstanceType<
+    typeof PaginationStatus[keyof Omit<typeof PaginationStatus, 'instanceOf'>]
+>;
+
+// FfiConverter for enum PaginationStatus
+const FfiConverterTypePaginationStatus = (() => {
+    const ordinalConverter = FfiConverterInt32;
+    type TypeName = PaginationStatus;
+    class FFIConverter extends AbstractFfiConverterByteArray<TypeName> {
+        read(from: RustBuffer): TypeName {
+            switch (ordinalConverter.read(from)) {
+                case 1: return new PaginationStatus.Idle({hitTimelineStart: FfiConverterBool.read(from) });
+                case 2: return new PaginationStatus.Paginating();
+                default: throw new UniffiInternalError.UnexpectedEnumCase();
+            }
+        }
+        write(value: TypeName, into: RustBuffer): void {
+            switch (value.tag) {
+                case PaginationStatus_Tags.Idle: {
+                    ordinalConverter.write(1, into);
+                    const inner = value.inner;
+                    FfiConverterBool.write(inner.hitTimelineStart, into);
+                    return;
+                }
+                case PaginationStatus_Tags.Paginating: {
+                    ordinalConverter.write(2, into);
+                    return;
+                }
+                default:
+                    // Throwing from here means that PaginationStatus_Tags hasn't matched an ordinal.
+                    throw new UniffiInternalError.UnexpectedEnumCase();
+            }
+        }
+        allocationSize(value: TypeName): number {
+            switch (value.tag) {
+                case PaginationStatus_Tags.Idle: {
+                    const inner = value.inner;
+                    let size = ordinalConverter.allocationSize(1);
+                    size += FfiConverterBool.allocationSize(inner.hitTimelineStart);
+                    return size;
+                }
+                case PaginationStatus_Tags.Paginating: {
+                    return ordinalConverter.allocationSize(2);
+                }
+                default: throw new UniffiInternalError.UnexpectedEnumCase();
+            }
+        }
+    }
+    return new FFIConverter();
+})();
 
 
 
@@ -1512,161 +1680,6 @@ const FfiConverterTypeRoomMemberRole = (() => {
 
 
 
-// Enum: RoomPaginationStatus
-export enum RoomPaginationStatus_Tags {
-    Idle = "Idle",
-    Paginating = "Paginating"
-}
-/**
- * Status for the back-pagination on a room event cache.
- */
-export const RoomPaginationStatus = (() => {
-    
-
-    type Idle__interface = {
-        tag: RoomPaginationStatus_Tags.Idle;
-        inner: Readonly<{hitTimelineStart: boolean}>
-    };
-
-    
-    /**
-     * No back-pagination is happening right now.
-     */
-    class Idle_ extends UniffiEnum implements Idle__interface {
-        /**
-         * @private
-         * This field is private and should not be used, use `tag` instead.
-         */
-        readonly [uniffiTypeNameSymbol] = "RoomPaginationStatus";
-        readonly tag = RoomPaginationStatus_Tags.Idle;
-        readonly inner: Readonly<{hitTimelineStart: boolean}>;
-        constructor(inner: { 
-        /**
-         * Have we hit the start of the timeline, i.e. back-paginating wouldn't
-         * have any effect?
-         */hitTimelineStart: boolean }) {
-            super("RoomPaginationStatus", "Idle");
-            this.inner = Object.freeze(inner);
-        }
-
-        static new(inner: { 
-        /**
-         * Have we hit the start of the timeline, i.e. back-paginating wouldn't
-         * have any effect?
-         */hitTimelineStart: boolean }): Idle_ {
-            return new Idle_(inner);
-        }
-
-        static instanceOf(obj: any): obj is Idle_ {
-            return obj.tag === RoomPaginationStatus_Tags.Idle;
-        }
-
-        
-
-    }
-    
-
-    type Paginating__interface = {
-        tag: RoomPaginationStatus_Tags.Paginating
-    };
-
-    
-    /**
-     * Back-pagination is already running in the background.
-     */
-    class Paginating_ extends UniffiEnum implements Paginating__interface {
-        /**
-         * @private
-         * This field is private and should not be used, use `tag` instead.
-         */
-        readonly [uniffiTypeNameSymbol] = "RoomPaginationStatus";
-        readonly tag = RoomPaginationStatus_Tags.Paginating;
-        constructor() {
-            super("RoomPaginationStatus", "Paginating");
-        }
-
-        static new(): Paginating_ {
-            return new Paginating_();
-        }
-
-        static instanceOf(obj: any): obj is Paginating_ {
-            return obj.tag === RoomPaginationStatus_Tags.Paginating;
-        }
-
-        
-
-    }
-
-    function instanceOf(obj: any): obj is RoomPaginationStatus {
-        return obj[uniffiTypeNameSymbol] === "RoomPaginationStatus";
-    }
-
-    return Object.freeze({
-        instanceOf,
-  Idle: Idle_, 
-  Paginating: Paginating_
-    });
-
-})();
-
-
-/**
- * Status for the back-pagination on a room event cache.
- */
-
-export type RoomPaginationStatus = InstanceType<
-    typeof RoomPaginationStatus[keyof Omit<typeof RoomPaginationStatus, 'instanceOf'>]
->;
-
-// FfiConverter for enum RoomPaginationStatus
-const FfiConverterTypeRoomPaginationStatus = (() => {
-    const ordinalConverter = FfiConverterInt32;
-    type TypeName = RoomPaginationStatus;
-    class FFIConverter extends AbstractFfiConverterByteArray<TypeName> {
-        read(from: RustBuffer): TypeName {
-            switch (ordinalConverter.read(from)) {
-                case 1: return new RoomPaginationStatus.Idle({hitTimelineStart: FfiConverterBool.read(from) });
-                case 2: return new RoomPaginationStatus.Paginating();
-                default: throw new UniffiInternalError.UnexpectedEnumCase();
-            }
-        }
-        write(value: TypeName, into: RustBuffer): void {
-            switch (value.tag) {
-                case RoomPaginationStatus_Tags.Idle: {
-                    ordinalConverter.write(1, into);
-                    const inner = value.inner;
-                    FfiConverterBool.write(inner.hitTimelineStart, into);
-                    return;
-                }
-                case RoomPaginationStatus_Tags.Paginating: {
-                    ordinalConverter.write(2, into);
-                    return;
-                }
-                default:
-                    // Throwing from here means that RoomPaginationStatus_Tags hasn't matched an ordinal.
-                    throw new UniffiInternalError.UnexpectedEnumCase();
-            }
-        }
-        allocationSize(value: TypeName): number {
-            switch (value.tag) {
-                case RoomPaginationStatus_Tags.Idle: {
-                    const inner = value.inner;
-                    let size = ordinalConverter.allocationSize(1);
-                    size += FfiConverterBool.allocationSize(inner.hitTimelineStart);
-                    return size;
-                }
-                case RoomPaginationStatus_Tags.Paginating: {
-                    return ordinalConverter.allocationSize(2);
-                }
-                default: throw new UniffiInternalError.UnexpectedEnumCase();
-            }
-        }
-    }
-    return new FFIConverter();
-})();
-
-
-
 /**
  * The data needed to perform authorization using OAuth 2.0.
  */
@@ -1857,10 +1870,10 @@ export default Object.freeze({
     FfiConverterTypeIntent,
     FfiConverterTypeNotificationType,
     FfiConverterTypeOAuthAuthorizationData,
+    FfiConverterTypePaginationStatus,
     FfiConverterTypePaginatorState,
     FfiConverterTypeQRCodeLoginError,
     FfiConverterTypeRoomMemberRole,
-    FfiConverterTypeRoomPaginationStatus,
     FfiConverterTypeRoomPowerLevelChanges,
     FfiConverterTypeServerVendorInfo,
     FfiConverterTypeVirtualElementCallWidgetConfig,

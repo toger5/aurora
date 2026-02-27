@@ -70,11 +70,10 @@ export class WidgetViewModel
   }
 
   private async startReceivingFromDriver() {
-    let next: null | undefined | string = null;
     for (
-      let next = await this.handle.recv();
+      let next = await this.handle?.recv();
       next !== undefined;
-      next = await this.handle.recv()
+      next = await this.handle?.recv()
     ) {
       this.iFrameListener?.(next);
     }
@@ -110,11 +109,13 @@ export class WidgetViewModel
         const urlObj = new URL(url);
         urlObj.searchParams.set("parentUrl", encodeURI(window.location.origin));
         this.snapshot.set({ url: urlObj.toString() });
-        setTimeout(() => {
-          void driver!.run(this.room, this.capabilityProvider);
-          void this.startReceivingFromDriver();
-        }, 1000);
-      } catch {}
+        void this.startReceivingFromDriver();
+        void driver!.run(this.room, this.capabilityProvider);
+      } catch {
+        (e) => {
+          console.log("error from driver run", e);
+        };
+      }
     });
   };
 }

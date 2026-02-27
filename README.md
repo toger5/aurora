@@ -11,7 +11,7 @@ Try is out at https://element-aurora.netlify.app/
 ## Prereqs
 
 ```bash
-cargo install -f wasm-bindgen-cli --version 0.2.105
+cargo install -f wasm-bindgen-cli --version 0.2.108
 yarn install
 ```
 
